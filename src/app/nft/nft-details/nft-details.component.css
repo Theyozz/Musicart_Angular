@@ -1,0 +1,21 @@
+.nft{
+    border-radius: 10px;
+}
+.launch_price{
+    font-weight: 200;
+    font-size: small;
+}
+.accordion-item{
+    background-color: #121619;
+}
+.accordion-button{
+    background-color: #21252B !important;
+    color: white;
+}
+.accordion-button:not(.collapsed){
+    color: white;
+}
+.accordion{
+    --bs-accordion-border-color:#21252B ;
+    --bs-accordion-color:white;
+}

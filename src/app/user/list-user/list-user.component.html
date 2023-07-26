@@ -1,0 +1,5 @@
+<div *ngFor="let user of users">
+    <h4>Pseudo: {{ user.pseudo}}</h4>
+    <button [routerLink]="['/users', user.id]">Show details</button>
+    <hr>
+</div>

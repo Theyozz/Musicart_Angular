@@ -1,0 +1,40 @@
+<section class="container">
+    <div *ngIf="nft" class="d-lg-flex gap-4 text-white">
+        <img [src]="nft.img" class="nft img-fluid col-12 col-lg-6" alt="">
+        <div *ngFor="let collection of nft.NFTCollection" >
+            <div class="d-flex gap-1 align-items-center mb-2">
+                <p class=" m-0">{{collection.name}}</p>
+                <img src="../../../assets/completer.png" width="15px" height="15px" alt="">
+            </div>
+            <div class="d-flex gap-2">
+                <p class="fw-lighter m-0">prix de lancement</p>
+                <div class="d-flex align-items-center ml-2">
+                    <img src="../../../assets/ethereum.png" width="10px" height="10px" alt="Ethereum Icon">
+                    <p class="launch_price m-0">{{nft.launch_price_eth}}</p>
+                </div>
+            </div>
+            <h1 class="my-5">{{nft.name}}</h1>
+            <div class="d-flex gap-2 mb-5">
+                <img src="../../../assets/photo-de-profil.png" width="45px" height="45px" alt="">
+                <div>
+                    <p class="m-0 fw-lighter">Propriétaire</p>
+                    <p class="text-success">{{nft.user.pseudo}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="nft" class="accordion col col-lg-6 mt-4" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-controls="collapseOne">
+              Description
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <p class="fw-lighter">{{nft.description}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+</section>
