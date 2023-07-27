@@ -19,3 +19,7 @@
     --bs-accordion-border-color:#21252B ;
     --bs-accordion-color:white;
 }
+.infos{
+    border-radius: 10px;
+    background-color: #21252B ;
+}

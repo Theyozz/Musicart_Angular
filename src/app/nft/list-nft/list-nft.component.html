@@ -1,13 +1,13 @@
 <section class="container">
     <div class="row">
-      <div class="col-md-2" *ngFor="let nft of nfts">
+      <div class="col-md-2 justify-content-end" *ngFor="let nft of nfts">
         <a [routerLink]="['/nfts', nft.id]">
           <div class="card mb-4 nft">
             <img [src]="nft.img" class="card-img-top" alt="NFT Image">
             <div class="card-body">
-              <div *ngFor="let collection of nft.NFTCollection">
+              <div>
                 <div class="d-flex gap-1 align-items-center mb-2">
-                  <p class="m-0 text-white">{{ collection.name }}</p>
+                  <p class="m-0 text-white">{{ nft.nFTCollection.name}}</p>
                   <img src="../../../assets/completer.png" width="10px" height="10px" alt="badge vérifié">
                 </div>
               </div>

@@ -8,6 +8,7 @@ import { ListCollectionComponent } from './collection/list-collection/list-colle
 import { UserDetailsComponent } from './user/user-details/user-details.component';
 import { HomeComponent } from './home/home.component';
 import { NftDetailsComponent } from './nft/nft-details/nft-details.component';
+import { CollectionDetailsComponent } from './collection/collection-details/collection-details.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path: 'nfts', component: ListNftComponent},
   {path: 'nfts/:id', component: NftDetailsComponent},
   {path: 'collections', component: ListCollectionComponent},
+  {path: 'collections/:id', component: CollectionDetailsComponent},
   {path: 'categories', component: ListCategoryComponent},
 ]
 

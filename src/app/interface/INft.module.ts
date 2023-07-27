@@ -6,10 +6,11 @@ export interface INft {
     id: number,
     name: string,
     img: string,
+    launch_date: Date,
     description: string,
     launch_price_eur: number,
     launch_price_eth: number,
     Category: any,
-    NFTCollection: any,
+    nFTCollection: any,
     user: IUser
 }

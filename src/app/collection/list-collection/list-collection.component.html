@@ -1,1 +1,22 @@
-<p>list-collection works!</p>
+<section class="container">
+    <h1 class="text-white text-center p-5">Liste des collections</h1>
+    <form class="d-flex mb-5" role="search">
+        <input class="form-control me-2" type="search" placeholder="Rechercher..." aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Rechercher</button>
+    </form>
+    <div class="d-flex gap-5 infos">
+        <p>#</p>
+        <p>Collection</p>
+    </div>
+    <div class="" *ngFor="let NFTCollection of NFTCollection">
+        <a [routerLink]="['/collections', NFTCollection.id]">
+            <div class="d-flex collection gap-5 align-items-center" >
+                <p class="text-white fw-lighter m-0">{{NFTCollection.id}}</p>
+                <div class="d-flex gap-2 align-items-center">
+                    <p class="text-white m-0">{{NFTCollection.name}}</p>
+                    <img src="../../../assets/completer.png" width="13px" height="13px" alt="">
+                </div>
+            </div>
+        </a>
+    </div>
+</section>

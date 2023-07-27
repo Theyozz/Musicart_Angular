@@ -17,6 +17,7 @@ import { UserDetailsComponent } from './user/user-details/user-details.component
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { NftDetailsComponent } from './nft/nft-details/nft-details.component';
+import { CollectionDetailsComponent } from './collection/collection-details/collection-details.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { NftDetailsComponent } from './nft/nft-details/nft-details.component';
     NavbarComponent,
     HomeComponent,
     NftDetailsComponent,
+    CollectionDetailsComponent,
   ],
   imports: [
     BrowserModule,
