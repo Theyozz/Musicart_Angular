@@ -23,3 +23,9 @@
     border-radius: 10px;
     background-color: #21252B ;
 }
+a{
+    color: white;
+}
+a:hover{
+    text-decoration: underline;
+}

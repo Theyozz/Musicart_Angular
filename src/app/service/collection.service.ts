@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { INftCollection } from '../interface/INftCollection.modele';
 
 @Injectable({
   providedIn: 'root'
@@ -13,5 +14,9 @@ export class CollectionService {
 
   getAllCollection(): Observable<any> {
     return this.http.get<any>(this.baseUrl)
+  }
+
+  getCollection(id: number): Observable<INftCollection> {
+    return this.http.get<INftCollection>(`${this.baseUrl}/${id}`);
   }
 }

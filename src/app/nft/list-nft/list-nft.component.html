@@ -1,27 +1,33 @@
+<div>
+  <h1 class="text-center titre text-white">Découvrez les NFTs</h1>
+</div>
 <section class="container">
-    <div class="row">
-      <div class="col-md-2 justify-content-end" *ngFor="let nft of nfts">
-        <a [routerLink]="['/nfts', nft.id]">
-          <div class="card mb-4 nft">
-            <img [src]="nft.img" class="card-img-top" alt="NFT Image">
-            <div class="card-body">
-              <div>
-                <div class="d-flex gap-1 align-items-center mb-2">
-                  <p class="m-0 text-white">{{ nft.nFTCollection.name}}</p>
-                  <img src="../../../assets/completer.png" width="10px" height="10px" alt="badge vérifié">
+    <div class="d-flex gap-5">
+
+      <div class="row col">
+        <div class="col-md-3 justify-content-end" *ngFor="let nft of nfts">
+          <a [routerLink]="['/nfts', nft.id]">
+            <div class="card mb-4 nft">
+              <img [src]="nft.img" class="card-img-top" alt="NFT Image">
+              <div class="card-body">
+                <div>
+                  <div class="d-flex gap-1 align-items-center mb-2">
+                    <p class="m-0 text-white">{{ nft.nFTCollection.name}}</p>
+                    <img src="../../../assets/completer.png" width="10px" height="10px" alt="badge vérifié">
+                  </div>
                 </div>
-              </div>
-              <h6 class="card-title text-light">{{ nft.name }}</h6>
-              <div class="d-flex gap-2 align-items-center">
-                <p class="m-0 text-white">Launch Price:</p>
-                <div class="d-flex align-items-center ml-2">
-                  <img src="../../../assets/ethereum.png" width="10px" height="10px" alt="Ethereum Icon">
-                  <p class="m-0 text-white">{{ nft.launch_price_eth }}</p>
+                <h6 class="card-title text-light">{{ nft.name }}</h6>
+                <div class="d-flex gap-2 align-items-center">
+                  <p class="m-0 text-white">Launch Price:</p>
+                  <div class="d-flex align-items-center ml-2">
+                    <img src="../../../assets/ethereum.png" width="10px" height="10px" alt="Ethereum Icon">
+                    <p class="m-0 text-white">{{ nft.launch_price_eth }}</p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </a>
+          </a>
+        </div>
       </div>
     </div>
   </section>

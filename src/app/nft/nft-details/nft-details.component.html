@@ -3,7 +3,9 @@
         <img [src]="nft.img" class="nft img-fluid col-12 col-lg-6" alt="">
         <div>
             <div class="d-flex gap-1 align-items-center mb-2">
-                <p class=" m-0">{{nft.nFTCollection.name}}</p>
+                <a [routerLink]="['/collections', nft.nFTCollection.id]">
+                  <p class=" m-0">{{nft.nFTCollection.name}}</p>
+                </a>
                 <img src="../../../assets/completer.png" width="15px" height="15px" alt="">
             </div>
             <h1 class="my-5">{{nft.name}}</h1>
