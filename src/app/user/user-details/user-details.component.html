@@ -1,6 +1,12 @@
-<div *ngIf="user">
-    <h2>Détails de l'utilisateur</h2>
-    <p>Nom: {{ user.firstname }}</p>
-    <p>Prénom: {{ user.lastname }}</p>
-    <p>Email: {{ user.email }}</p>
+<div class="text-white d-flex justify-content-between test " style="background: url({{user.profil_picture}}) no-repeat center center / cover;" *ngIf="user">
+    <div class="d-flex align-items-center gap-4">
+        <img src="{{user.profil_picture}}" width="150px" alt="photo de profil">
+        <h3 class="">{{user.pseudo}}</h3>
+    </div>
+    <!-- <div>
+        <button type="button" class="btn btn-outline-secondary">Partager</button>
+    </div> -->
 </div>
+<section class="container">
+    
+</section>

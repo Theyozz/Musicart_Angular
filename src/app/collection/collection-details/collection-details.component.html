@@ -11,7 +11,7 @@
     </div>
     <p class="fw-lighter col-6">{{ nftCollection.description }}</p>
 
-    <form class="d-flex mb-5 col" role="search">
+    <form class="d-flex my-5 col" role="search">
       <input
         class="form-control me-2"
         type="search"
@@ -21,7 +21,7 @@
       <button class="btn btn-outline-success" type="submit">Rechercher</button>
     </form>
 
-    <div class="d-flex">
+    <div class="d-flex flex-wrap">
       <ng-container *ngFor="let nft of nfts">
         <div *ngIf="nft.nFTCollection.name === nftCollection.name" class="mx-4">
           <a [routerLink]="['/nfts', nft.id]">

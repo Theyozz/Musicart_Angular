@@ -8,12 +8,14 @@
                 </a>
                 <img src="../../../assets/completer.png" width="15px" height="15px" alt="">
             </div>
-            <h1 class="my-5">{{nft.name}}</h1>
+            <h1 class="my-5">{{nft.name}} #{{nft.id}}</h1>
             <div class="d-flex gap-2 mb-5">
                 <img src="../../../assets/photo-de-profil.png" width="45px" height="45px" alt="">
                 <div>
                     <p class="m-0 fw-lighter">Propriétaire</p>
-                    <p class="text-success">{{nft.user.pseudo}}</p>
+                    <a class="user" [routerLink]="['/users', nft.user.id]">
+                      <p class="text-danger">{{nft.user.pseudo}}</p>
+                    </a>
                 </div>
             </div>
             <div class="infos p-5">

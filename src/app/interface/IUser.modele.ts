@@ -8,5 +8,6 @@ export interface IUser {
     firstname: string,
     lastname: string,
     BirthDate: Date,
-    Address: IAddress
+    Address: IAddress,
+    profil_picture: string
 }

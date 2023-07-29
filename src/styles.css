@@ -3,9 +3,9 @@
 
 body{
     /* background-image: url(assets/background_2.jpg);
-    font-family: Montserrat;
     color: white; */
     background-color: #121619;
+    font-family: Montserrat;
     padding-top: 150px;
 }
 a{
