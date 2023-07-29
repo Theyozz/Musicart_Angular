@@ -1,11 +1,12 @@
-<section class="container text-white" >
-    <div class="d-flex gap-4 align-items-center justify-content-center" *ngIf="randomNft">
-        <div class="col">
+<!--style="background-image: url({{randomNft.img}}); background-position:center; background-repeat: no-repeat; background-size: cover;"-->
+<section class="container text-white first-section" >
+    <div class="d-lg-flex gap-4 align-items-center justify-content-center" *ngIf="randomNft">
+        <div class="col-lg-6 mb-5">
             <h1 class="mb-4">Soutenez vos artistes préférés en achetant leur NFT</h1>
             <p class="mb-5">Musicart est une marketplace pour NFTs et crypto collectibles lié à l'univers musical. Achetez, collectionnez, revendez les NFTs de vos artistes préférés</p>
             <a [routerLink]="['/nfts']"><button class="btn btn-outline-light col-4">Explorer</button></a>
         </div>
-        <div class="col-4">
+        <div class="col-lg-4">
             <a [routerLink]="['/nfts', randomNft.id]">
                 <div class="card mb-4 nft">
                     <img [src]="randomNft.img" class="card-img-top" alt="NFT Image">
@@ -22,6 +23,71 @@
         </div>
     </div>
 </section>
-<section class="container">
-    
+<section class="container second-section text-white">
+    <div class="d-flex align-items-center justify-content-center gap-4">
+        <div class="d-none d-md-block col-lg-4">
+            <img src="../../assets/home_pic.jpg" class="img-fluid" width="600px" alt="">
+        </div>
+        <div class="col-lg-6">
+            <h2 class="text-uppercase">Qui sommes-nous ?</h2>
+            <hr width="100px" class="mb-5 ms-5">
+            <p class="mb-5 fw-lighter"><strong>Musicart</strong> a été fondé  en 2022 et a pour but de créer une proximité entre des artistes et leur fans. Tout les artistes présent sur notre plateforme ont rejoins notrecommunauté via des contrats de <strong>licences exclusifs</strong>, ce qui va nous permettre de proposer des expériences unique.</p>
+            <p class="infos d-md-block d-none fw-lighter">Retrouver des artistes comme <strong>Drake</strong>, <strong>Travis Scott</strong>, <strong>Bryson Tiller</strong> et bien plus encore Et participer aux différentes auction pour tenter de gagner du contenu exclusif lié à votre artiste favori</p>
+            <p class="infos-res d-md-none fw-lighter">Retrouver des artistes comme <strong>Drake</strong>, <strong>Travis Scott</strong>, <strong>Bryson Tiller</strong> et bien plus encore Et participer aux différentes auction pour tenter de gagner du contenu exclusif lié à votre artiste favori</p>
+        </div>
+    </div>
+</section>
+<section class="container third-section text-white">
+    <h2 class="text-uppercase text-center">Team</h2>
+    <hr width="70px" class="mx-auto">
+    <p class="text-center col-6 mx-auto">Notre equipe est composé de différents Notre equipe est composé de différents  Notre equipe est composé de différents</p>
+    <div class="d-flex justify-content-center gap-5 mt-5 flex-wrap">
+        <div>
+            <img class="team-pic" src="../../assets/team-pic/ceo.jpg" alt="CEO Team Musicart">
+            <div class="name text-dark">
+                <p class="m-0 fw-bold">Julien Paranum</p>
+                <p class="m-0">CEO</p>
+            </div>
+        </div>
+        <div>
+            <img class="team-pic" src="../../assets/team-pic/community-manager.jpeg" alt="CEO Team Musicart">
+            <div class="name text-dark">
+                <p class="m-0 fw-bold">Julien Paranum</p>
+                <p class="m-0">CEO</p>
+            </div>
+        </div>
+        <div>
+            <img class="team-pic" src="../../assets/team-pic/design.jpeg" alt="CEO Team Musicart">
+            <div class="name text-dark">
+                <p class="m-0 fw-bold">Julien Paranum</p>
+                <p class="m-0">CEO</p>
+            </div>
+        </div>
+        <div>
+            <img class="team-pic" src="../../assets/team-pic/developer.jpeg" alt="CEO Team Musicart">
+            <div class="name text-dark">
+                <p class="m-0 fw-bold">Julien Paranum</p>
+                <p class="m-0">CEO</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="container text-white fourth-section">
+    <h2 class="text-uppercase text-center">Un nft c'est quoi ?</h2>
+        <div class="d-flex align-items-center info-nft-left col-lg-8 mt-5">
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+            <img src="../../assets/home-logo/blockchain.png" width="80px" alt="">
+        </div>
+        <div class="d-flex align-items-center info-nft-right col-lg-8 mt-5 offset-lg-4">
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+            <img src="../../assets/home-logo/ethereum.png" width="80px" alt="">
+        </div>
+        <div class="d-flex align-items-center info-nft-left col-lg-8 mt-5">
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+            <img src="../../assets/home-logo/crypto.png" width="80px" alt="">
+        </div>
+        <div class="d-flex align-items-center info-nft-right col-lg-8 mt-5 offset-lg-4">
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+            <img src="../../assets/home-logo/mona-lisa.png" width="80px" alt="">
+        </div>
 </section>

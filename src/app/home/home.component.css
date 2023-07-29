@@ -1,3 +1,8 @@
+/* PREMIERE SECTION */
+
+.first-section{
+    margin-bottom: 250px;
+}
 .nft{
     background-color: #121619;
     border: rgb(71, 71, 71) 1px solid;
@@ -11,4 +16,68 @@
 .nft:hover{
     cursor: pointer;
     background-color: #212527;
+}
+
+/* DEUXIEME SECTION */
+
+.second-section{
+    margin-bottom: 250px;
+}
+.infos{
+    background-color: rgba(255, 255, 255, 0.08);
+    padding: 35px;
+    border-radius: 5px;
+    border: rgba(255, 255, 255, 0.395) 1px solid;
+    margin-left: -200px;
+}
+.infos-res{
+    background-color: rgba(255, 255, 255, 0.08);
+    padding: 35px;
+    border-radius: 5px;
+    border: rgba(255, 255, 255, 0.395) 1px solid;
+}
+.team-pic{
+    border-radius: 100%;
+    width: 180px;
+    height: 160px;
+}
+.name{
+    background-color: white;
+    border-radius: 5px;
+    border-bottom-right-radius: 25px;
+    padding: 5px 10px;
+    margin-top: -30px;
+    position: relative;
+    z-index: 1;
+}
+
+/* TROISIÈME SECTION */
+
+.third-section{
+    margin-bottom: 250px;
+}
+
+/* QUATRIÈME SECTION */
+
+.fourth-section{
+    margin-bottom: 250px;
+}
+
+.info-nft-left p{
+    background-color: rgba(255, 255, 255, 0.08);
+    padding: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.413);
+    border-radius: 5px;
+}
+.info-nft-left img{
+    margin-left: -20px;
+}
+.info-nft-right p{
+    background-color: rgba(255, 255, 255, 0.08);
+    padding: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.413);
+    border-radius: 5px;
+}
+.info-nft-right img{
+    margin-right: -20px;
 }
