@@ -19,6 +19,8 @@ import { HomeComponent } from './home/home.component';
 import { NftDetailsComponent } from './nft/nft-details/nft-details.component';
 import { CollectionDetailsComponent } from './collection/collection-details/collection-details.component';
 import { FooterComponent } from './footer/footer.component';
+import { ShareButtonsModule } from 'ngx-sharebuttons/buttons';
+import { ShareIconsModule } from 'ngx-sharebuttons/icons';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { FooterComponent } from './footer/footer.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ShareButtonsModule,
+    ShareIconsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

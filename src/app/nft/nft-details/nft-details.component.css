@@ -29,3 +29,17 @@ a{
 .user:hover{
     text-decoration: underline red;
 }
+.nft{
+    background-color: #121619;
+    border: rgb(71, 71, 71) 1px solid;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.card-img-top{
+    border-radius: 10px;
+}
+
+.nft:hover{
+    cursor: pointer;
+    background-color: #212527;
+}

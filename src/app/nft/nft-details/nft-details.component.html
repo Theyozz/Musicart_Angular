@@ -1,12 +1,23 @@
-<section class="container">
-    <div *ngIf="nft" class="d-lg-flex gap-4 text-white">
+<section class="container" *ngIf="nft">
+    <div  class="d-lg-flex gap-4 text-white">
         <img [src]="nft.img" class="nft img-fluid col-12 col-lg-6" alt="">
         <div>
-            <div class="d-flex gap-1 align-items-center mb-2">
-                <a [routerLink]="['/collections', nft.nFTCollection.id]">
-                  <p class=" m-0">{{nft.nFTCollection.name}}</p>
-                </a>
-                <img src="../../../assets/completer.png" width="15px" height="15px" alt="">
+            <div class="d-flex justify-content-between mb-2">
+                <div class="d-flex gap-1 align-items-center">
+                  <a [routerLink]="['/collections', nft.nFTCollection.id]">
+                    <p class=" m-0">{{nft.nFTCollection.name}}</p>
+                  </a>
+                  <img src="../../../assets/completer.png" width="15px" height="15px" alt="">
+                </div>
+                <share-buttons theme="modern-dark"
+                  [include]="['copy']"
+                  [showIcon]="true"
+                  [showText]="true"
+                  url="http://localhost:4200/nfts/{{nft.id}}"
+                  description="Angular Share Buttons"
+                  twitterAccount="Theyozz"
+                  class="btn btn-outline-secondary">
+                </share-buttons>
             </div>
             <h1 class="my-5">{{nft.name}} #{{nft.id}}</h1>
             <div class="d-flex gap-2 mb-5">
@@ -19,7 +30,7 @@
                 </div>
             </div>
             <div class="infos p-5">
-              <p class="fw-lighter">Ce NFT a été créer le <strong>{{ nft.launch_date| date:'dd MMMM yyyy'}}</strong></p>
+              <p class="fw-lighter">Ce NFT a été créé le <strong>{{ nft.launch_date| date:'dd MMMM yyyy'}}</strong></p>
               <div class="d-flex gap-2">
                 <p class="m-0 fw-lighter">Son prix de lancement est de</p>
                 <div class="d-flex align-items-center ml-2">
@@ -62,11 +73,37 @@
                 <p class="fw-lighter">Ethereum</p>
               </div>
               <div class="d-flex justify-content-between">
-                <p>Token standars</p>
+                <p>Token standards</p>
                 <p class="fw-lighter">ERC721</p>
               </div>
             </div>
           </div>
+        </div>
+      </div>
+      <div class="text-white mt-5">
+        <h2 class="text-center mb-5">Plus de cette collection</h2>
+        <div class="d-lg-flex justify-content-center gap-5">
+          <div *ngFor="let nfte of threeNft">
+            <a [routerLink]="['/nfts', nfte.id]">
+              <div class="card mb-4 nft">
+                <img [src]="nfte.img" class="card-img-top" alt="NFT Image">
+                <div class="card-body">
+                  <div>
+                    <div class="d-flex gap-1 align-items-center mb-2">
+                      <p class="m-0 text-white">{{ nfte.nFTCollection.name}}</p>
+                      <img src="../../../assets/completer.png" width="10px" height="10px" alt="badge vérifié">
+                    </div>
+                  </div>
+                  <h6 class="card-title text-light">{{ nfte.name }}</h6>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="text-center mt-4">
+          <a [routerLink]="['/collections',nft.nFTCollection.id]">
+            <button class="btn btn-outline-light">Voir la collection</button>
+          </a>
         </div>
       </div>
 </section>

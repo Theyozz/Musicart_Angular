@@ -11,6 +11,7 @@ import { NftDetailsComponent } from './nft/nft-details/nft-details.component';
 import { CollectionDetailsComponent } from './collection/collection-details/collection-details.component';
 
 const routes: Routes = [
+  {path: '', component: HomeComponent},
   {path: 'home', component: HomeComponent},
   {path: 'users', component: ListUserComponent},
   {path: 'users/:id', component: UserDetailsComponent},

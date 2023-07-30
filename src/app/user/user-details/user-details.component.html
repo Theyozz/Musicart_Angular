@@ -3,9 +3,18 @@
         <img src="{{user.profil_picture}}" width="150px" alt="photo de profil">
         <h3 class="">{{user.pseudo}}</h3>
     </div>
-    <!-- <div>
-        <button type="button" class="btn btn-outline-secondary">Partager</button>
-    </div> -->
+    <div>
+        <share-buttons 
+            theme="modern-dark"
+            [include]="['copy']"
+            [showIcon]="true"
+            [showText]="true"
+            url="http://localhost:4200/users/{{user.id}}"
+            description="Angular Share Buttons"
+            twitterAccount="Theyozz"
+            class="btn btn-outline-secondary">
+        </share-buttons>
+    </div>
 </div>
 <section class="container">
     

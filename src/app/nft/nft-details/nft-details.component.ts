@@ -10,11 +10,15 @@ import { NftService } from 'src/app/service/nft.service';
 })
 export class NftDetailsComponent implements OnInit{
   nft: INft | undefined;
+  nfts: INft[] = []
+  threeNft: INft[] = []
 
   constructor(private route: ActivatedRoute,private nftService: NftService){}
 
   ngOnInit() {
     this.getNftDetails();
+    this.displayAllNfts();
+    this.getThreeNft();
   }
 
   getNftDetails() {
@@ -26,6 +30,30 @@ export class NftDetailsComponent implements OnInit{
           this.nft = nft;
         }
       );
+    }
+  }
+  displayAllNfts(){
+    this.nftService.getAllNfts().subscribe(
+      (data) => {
+        this.nfts = data['hydra:member'];
+        this.getThreeNft();
+      }
+    );
+  }
+
+  getThreeNft() {
+    const collectionName = this.nft?.nFTCollection.name
+  
+    if (collectionName) {
+      let counter = 0;
+  
+      this.threeNft = this.nfts.filter((nft) => {
+        if (nft.nFTCollection.name === collectionName && counter < 3) {
+          counter++;
+          return true;
+        }
+        return false;
+      });
     }
   }
 
