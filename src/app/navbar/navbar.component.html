@@ -16,9 +16,25 @@
             <a class="nav-link text-white" href="/">Ressources</a>
           </li>
         </ul>
-        <form class="d-flex col-4" role="search">
-          <input class="form-control me-2" type="search" placeholder="Rechercher..." aria-label="Rechercher">
-        </form>
+        <div class="d-lg-flex col-lg-6 gap-5">
+          <form class="d-flex col-lg-8" role="search">
+            <input class="form-control me-2" type="search" placeholder="Rechercher..." aria-label="Rechercher">
+          </form>
+          <a href="login">
+            <div *ngIf="isLoggedIn(); else notLoggedInOptions">
+              <button (click)="logout()" class="btn btn-secondary">
+                Se deconnecter
+              </button>
+            </div>
+            <ng-template #notLoggedInOptions>
+              <a href="login">
+                <button class="btn btn-secondary">
+                  Se connecter
+                </button>
+              </a>
+            </ng-template>
+          </a>
+        </div>
       </div>
     </div>
 </nav>

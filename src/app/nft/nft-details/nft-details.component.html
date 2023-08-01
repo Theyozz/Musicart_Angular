@@ -14,9 +14,8 @@
                   [showIcon]="true"
                   [showText]="true"
                   url="http://localhost:4200/nfts/{{nft.id}}"
-                  description="Angular Share Buttons"
-                  twitterAccount="Theyozz"
-                  class="btn btn-outline-secondary">
+                  description="Bouton partagé Musicart"
+                  twitterAccount="Theyozz">
                 </share-buttons>
             </div>
             <h1 class="my-5">{{nft.name}} #{{nft.id}}</h1>
@@ -30,7 +29,7 @@
                 </div>
             </div>
             <div class="infos p-5">
-              <p class="fw-lighter">Ce NFT a été créé le <strong>{{ nft.launch_date| date:'dd MMMM yyyy'}}</strong></p>
+              <p class="fw-lighter">Ce NFT a été créé le <strong>{{ nft.launch_date| date:'dd MMMM yyyy'}}</strong> a {{nft.launch_date| date:'h:mm a'}}</p>
               <div class="d-flex gap-2">
                 <p class="m-0 fw-lighter">Son prix de lancement est de</p>
                 <div class="d-flex align-items-center ml-2">
@@ -83,18 +82,18 @@
       <div class="text-white mt-5">
         <h2 class="text-center mb-5">Plus de cette collection</h2>
         <div class="d-lg-flex justify-content-center gap-5">
-          <div *ngFor="let nfte of threeNft">
-            <a [routerLink]="['/nfts', nfte.id]">
+          <div *ngFor="let nft of threeNft">
+            <a [routerLink]="['/nfts', nft.id]">
               <div class="card mb-4 nft">
-                <img [src]="nfte.img" class="card-img-top" alt="NFT Image">
+                <img [src]="nft.img" class="card-img-top" alt="NFT Image">
                 <div class="card-body">
                   <div>
                     <div class="d-flex gap-1 align-items-center mb-2">
-                      <p class="m-0 text-white">{{ nfte.nFTCollection.name}}</p>
+                      <p class="m-0 text-white">{{ nft.nFTCollection.name}}</p>
                       <img src="../../../assets/completer.png" width="10px" height="10px" alt="badge vérifié">
                     </div>
                   </div>
-                  <h6 class="card-title text-light">{{ nfte.name }}</h6>
+                  <h6 class="card-title text-light">{{ nft.name }}</h6>
                 </div>
               </div>
             </a>

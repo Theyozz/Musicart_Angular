@@ -1,0 +1,18 @@
+<section class="container">
+    <form
+     class="col-4 mx-auto form text-center"
+     name="form"
+     #f="ngForm"
+     (ngSubmit)="f.form.valid && onSubmit()">
+        <h4>Se Connecter</h4>
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" name="pseudo" id="pseudo" [(ngModel)]="form.pseudo" #pseudo="ngModel" placeholder="name@example.com">
+          <label for="floatingInput">Pseudo</label>
+          </div>
+          <div class="form-floating ">
+            <input type="password" class="form-control"  name="password" id="password" [(ngModel)]="form.password" #password="ngModel" placeholder="Password" required>
+            <label for="floatingPassword">Password</label>
+          </div>
+          <button class="btn btn-primary mt-4" type="submit">Valider</button>
+      </form>
+</section>

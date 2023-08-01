@@ -21,6 +21,8 @@ import { CollectionDetailsComponent } from './collection/collection-details/coll
 import { FooterComponent } from './footer/footer.component';
 import { ShareButtonsModule } from 'ngx-sharebuttons/buttons';
 import { ShareIconsModule } from 'ngx-sharebuttons/icons';
+import { LoginComponent } from './login/login.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -40,6 +42,7 @@ import { ShareIconsModule } from 'ngx-sharebuttons/icons';
     NftDetailsComponent,
     CollectionDetailsComponent,
     FooterComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,6 +50,7 @@ import { ShareIconsModule } from 'ngx-sharebuttons/icons';
     HttpClientModule,
     ShareButtonsModule,
     ShareIconsModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

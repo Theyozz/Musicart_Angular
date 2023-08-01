@@ -10,6 +10,9 @@
 }
 .card-img-top{
     border-radius: 10px;
+    height: 200px; /* Ajustez la hauteur selon vos préférences */
+    width: 250px;
+    object-fit: cover;
 }
 
 .nft:hover{
