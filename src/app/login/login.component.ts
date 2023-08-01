@@ -15,18 +15,13 @@ export class LoginComponent implements OnInit{
     password: ""
   }
 
-  constructor(private authService: AuthService, private tokenService: TokenService){
+  constructor(private authService: AuthService, private tokenService: TokenService){ }
 
-  }
-
-  ngOnInit(): void {
-    
-  }
+  ngOnInit(): void {}
 
   onSubmit(): void{
     this.authService.login(this.form).subscribe(
       data => {
-        console.log(data.token)
         this.tokenService.saveToken(data.token)
       },
       err => console.log(err)

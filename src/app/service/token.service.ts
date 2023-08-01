@@ -20,6 +20,10 @@ export class TokenService {
 
   clearToken(): void{
     localStorage.removeItem('token')
-    this.router.navigate(['home'])
+    this.router.navigate(['/'])
+  }
+
+  getToken(): string | null{
+    return localStorage.getItem('token')
   }
 }

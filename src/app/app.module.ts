@@ -23,6 +23,7 @@ import { ShareButtonsModule } from 'ngx-sharebuttons/buttons';
 import { ShareIconsModule } from 'ngx-sharebuttons/icons';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
+import { TokenInterceptorProvider } from './interceptor/token.interceptor';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,7 @@ import { FormsModule } from '@angular/forms';
     ShareIconsModule,
     FormsModule,
   ],
-  providers: [],
+  providers: [TokenInterceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
