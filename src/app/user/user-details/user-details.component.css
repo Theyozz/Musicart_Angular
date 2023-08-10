@@ -1,0 +1,21 @@
+.nft{
+    transition: transform .2s;
+    background-color: #121619;
+    border: rgb(71, 71, 71) 1px solid;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.card-img-top{
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.nft:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    background-color: #212527;
+}
+.connecte{
+    height: 70vh;
+
+}

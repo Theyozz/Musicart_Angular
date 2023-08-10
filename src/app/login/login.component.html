@@ -1,18 +1,22 @@
 <section class="container">
-    <form
-     class="col-4 mx-auto form text-center"
-     name="form"
-     #f="ngForm"
-     (ngSubmit)="f.form.valid && onSubmit()">
-        <h4>Se Connecter</h4>
-        <div class="form-floating mb-3">
-          <input type="text" class="form-control" name="pseudo" id="pseudo" [(ngModel)]="form.pseudo" #pseudo="ngModel" placeholder="name@example.com">
-          <label for="floatingInput">Pseudo</label>
-          </div>
-          <div class="form-floating ">
-            <input type="password" class="form-control"  name="password" id="password" [(ngModel)]="form.password" #password="ngModel" placeholder="Password" required>
-            <label for="floatingPassword">Password</label>
-          </div>
-          <button class="btn btn-primary mt-4" type="submit">Valider</button>
-      </form>
+    <div class="formulaire col-4 mx-auto form text-center">
+      <form class="form" name="form" #f="ngForm" (ngSubmit)="f.form.valid && onSubmit()">
+          <h4 class="text-white">Se Connecter</h4>
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" name="pseudo" id="pseudo" [(ngModel)]="form.pseudo" #pseudo="ngModel" placeholder="name@example.com">
+            <label for="floatingInput">Pseudo</label>
+            </div>
+            <div class="form-floating ">
+              <input type="password" class="form-control"  name="password" id="password" [(ngModel)]="form.password" #password="ngModel" placeholder="Password" required>
+              <label for="floatingPassword">Password</label>
+            </div>
+            <button class="btn btn-outline-primary col-6 mt-4" type="submit">Valider</button>
+            <hr>
+            <a href="register">
+              <button type="button" class="btn btn-outline-success col-6">
+                S'inscrire
+              </button>
+            </a>
+        </form>      
+    </div>
 </section>

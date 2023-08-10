@@ -1,5 +1,5 @@
 <section class="container" *ngIf="nft">
-    <div  class="d-lg-flex gap-4 text-white">
+    <div  class="d-lg-flex gap-5 text-white">
         <img [src]="nft.img" class="nft img-fluid col-12 col-lg-6" alt="">
         <div>
             <div class="d-flex justify-content-between mb-2">
@@ -9,7 +9,7 @@
                   </a>
                   <img src="../../../assets/completer.png" width="15px" height="15px" alt="">
                 </div>
-                <share-buttons theme="modern-dark"
+                <share-buttons theme="modern-light"
                   [include]="['copy']"
                   [showIcon]="true"
                   [showText]="true"
@@ -84,7 +84,7 @@
         <div class="d-lg-flex justify-content-center gap-5">
           <div *ngFor="let nft of threeNft">
             <a [routerLink]="['/nfts', nft.id]">
-              <div class="card mb-4 nft">
+              <div class="card mb-4 mx-auto nft" style="display: inline-block;">
                 <img [src]="nft.img" class="card-img-top" alt="NFT Image">
                 <div class="card-body">
                   <div>
@@ -100,7 +100,7 @@
           </div>
         </div>
         <div class="text-center mt-4">
-          <a [routerLink]="['/collections',nft.nFTCollection.id]">
+          <a [routerLink]="['/collections', nft.nFTCollection.id]">
             <button class="btn btn-outline-light">Voir la collection</button>
           </a>
         </div>

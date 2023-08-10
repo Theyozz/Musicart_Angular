@@ -1,6 +1,16 @@
-.form{
-    background-color: white;
-    padding: 60px;
+.formulaire{
+    background-color: rgba(255, 255, 255, 0.098);
+    padding: 30px 60px 30px 60px;
+    border: white 1px solid;
     border-radius: 10px;
     box-shadow: 10px;
+    height: 50vh;
+}
+.image{
+    height: 100vh;
+    background-image: url(../../assets/background_2.jpg);
+    width: 400px;
+}
+hr{
+    color: white;
 }

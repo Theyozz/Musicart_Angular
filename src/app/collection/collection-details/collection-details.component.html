@@ -10,16 +10,7 @@
       />
     </div>
     <p class="fw-lighter col-6">{{ nftCollection.description }}</p>
-
-    <form class="d-flex my-5 col" role="search">
-      <input
-        class="form-control me-2"
-        type="search"
-        placeholder="Rechercher..."
-        aria-label="Search"
-      />
-      <button class="btn btn-outline-success" type="submit">Rechercher</button>
-    </form>
+    <hr>
 
     <div class="d-flex flex-wrap">
       <ng-container *ngFor="let nft of nfts">

@@ -35,13 +35,14 @@ a{
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
-.card-img-top {
-    height: 200px; /* Ajustez la hauteur selon vos préférences */
-    width: 200px;
-    object-fit: cover;
-  }
 
 .nft:hover{
     cursor: pointer;
     background-color: #212527;
+}
+.card-img-top{
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
 }

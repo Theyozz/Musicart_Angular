@@ -10,7 +10,7 @@ export interface INft {
     description: string,
     launch_price_eur: number,
     launch_price_eth: number,
-    Category: any,
-    nFTCollection: any,
+    Category: ICategory,
+    nFTCollection: INftCollection,
     user: IUser
 }

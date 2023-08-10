@@ -1,5 +1,10 @@
-<div *ngFor="let user of users">
-    <h4>Pseudo: {{ user.pseudo}}</h4>
-    <button [routerLink]="['/users', user.id]">Show details</button>
-    <hr>
+<div  *ngIf="isLoggedIn(); else notLoggedInOptions"  >
+    <div *ngFor="let user of users" class="text-white">
+        <h4>Pseudo: {{ user.pseudo}}</h4>
+        <button [routerLink]="['/users', user.id]">Show details</button>
+        <hr>
+    </div>
 </div>
+<ng-template #notLoggedInOptions>
+    <h1 class="text-white">CONNECTE TOI</h1>
+</ng-template>

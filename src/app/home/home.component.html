@@ -1,12 +1,12 @@
 <!--style="background-image: url({{randomNft.img}}); background-position:center; background-repeat: no-repeat; background-size: cover;"-->
 <section class="container text-white first-section" >
-    <div class="d-lg-flex gap-4 align-items-center justify-content-center" *ngIf="randomNft">
+    <div class="d-lg-flex gap-4 align-items-center justify-content-center" >
         <div class="col-lg-6 mb-5">
             <h1 class="mb-4">Soutenez vos artistes préférés en achetant leur NFT</h1>
             <p class="mb-5">Musicart est une marketplace pour NFTs et crypto collectibles lié à l'univers musical. Achetez, collectionnez, revendez les NFTs de vos artistes préférés</p>
             <a [routerLink]="['/nfts']"><button class="btn btn-outline-light col-4">Explorer</button></a>
         </div>
-        <div class="col-lg-4">
+        <div class="col-lg-4" *ngIf="randomNft">
             <a [routerLink]="['/nfts', randomNft.id]">
                 <div class="card mb-4 nft">
                     <img [src]="randomNft.img" class="card-img-top" alt="NFT Image">
@@ -43,31 +43,31 @@
     <p class="text-center col-6 mx-auto">Notre equipe est composé de différents Notre equipe est composé de différents  Notre equipe est composé de différents</p>
     <div class="d-flex justify-content-center gap-5 mt-5 flex-wrap">
         <div>
-            <img class="team-pic" src="../../assets/team-pic/ceo.jpg" alt="CEO Team Musicart">
+            <div class="pp-ceo"></div>
             <div class="name text-dark">
                 <p class="m-0 fw-bold">Julien Paranum</p>
                 <p class="m-0">CEO</p>
             </div>
         </div>
         <div>
-            <img class="team-pic" src="../../assets/team-pic/community-manager.jpeg" alt="CEO Team Musicart">
+            <div class="pp-cm"></div>
             <div class="name text-dark">
                 <p class="m-0 fw-bold">Julien Paranum</p>
-                <p class="m-0">CEO</p>
+                <p class="m-0">CM</p>
             </div>
         </div>
         <div>
-            <img class="team-pic" src="../../assets/team-pic/design.jpeg" alt="CEO Team Musicart">
+            <div class="pp-dev"></div>
             <div class="name text-dark">
                 <p class="m-0 fw-bold">Julien Paranum</p>
-                <p class="m-0">CEO</p>
+                <p class="m-0">Developpeur</p>
             </div>
         </div>
         <div>
-            <img class="team-pic" src="../../assets/team-pic/developer.jpeg" alt="CEO Team Musicart">
+            <div class="pp-design"></div>
             <div class="name text-dark">
                 <p class="m-0 fw-bold">Julien Paranum</p>
-                <p class="m-0">CEO</p>
+                <p class="m-0">Designeuse</p>
             </div>
         </div>
     </div>

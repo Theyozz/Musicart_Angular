@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient} from '@angular/common/http';
+import { HttpClient, HttpParams} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { IAddress } from '../interface/IAddress.modele';
 import { IUser } from '../interface/IUser.modele';
+import { FormGroup } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
@@ -22,5 +23,13 @@ export class UserService {
 
   getUser(id: number): Observable<IUser> {
     return this.http.get<IUser>(`${this.baseUrl}/${id}`);
+  }
+  searchUsersWithPseudo(pseudo: string): Observable<IUser[]> {
+    const params = new HttpParams().set('pseudo', pseudo);
+    return this.http.get<any[]>(this.baseUrl, { params })
+  }
+
+  createuser(formData: FormGroup): Observable<any>{
+    return this.http.post(this.baseUrl, formData.getRawValue());
   }
 }

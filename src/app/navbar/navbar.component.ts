@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { TokenService } from '../service/token.service';
-import { Router } from '@angular/router';
+import { IUser } from '../interface/IUser.modele';
+import { UserService } from '../service/user.service';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-navbar',
@@ -8,13 +10,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit{
+  users: IUser[] = []
 
-  constructor(private tokenService: TokenService, private router: Router){
-
-  }
+  constructor(private tokenService: TokenService, private userService: UserService, private fb: FormBuilder){}
 
   ngOnInit(): void {
-    
+    this.getUserPseudo();
   }
 
   isLoggedIn(): boolean {
@@ -22,6 +23,11 @@ export class NavbarComponent implements OnInit{
   }
 
   logout(): void {
-    this.tokenService.clearToken()
+    this.tokenService.clearTokenAndUserInfos()
+  }
+
+  getUserPseudo(){
+    console.log(this.tokenService.getUserPseudo())
+    return this.tokenService.getUserPseudo()
   }
 }

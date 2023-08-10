@@ -23,6 +23,7 @@ export class LoginComponent implements OnInit{
     this.authService.login(this.form).subscribe(
       data => {
         this.tokenService.saveToken(data.token)
+        this.tokenService.saveUserCredentials(this.form.pseudo);
       },
       err => console.log(err)
     )

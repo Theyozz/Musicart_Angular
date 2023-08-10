@@ -22,8 +22,10 @@ import { FooterComponent } from './footer/footer.component';
 import { ShareButtonsModule } from 'ngx-sharebuttons/buttons';
 import { ShareIconsModule } from 'ngx-sharebuttons/icons';
 import { LoginComponent } from './login/login.component';
-import { FormsModule } from '@angular/forms';
+import {  FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TokenInterceptorProvider } from './interceptor/token.interceptor';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +46,7 @@ import { TokenInterceptorProvider } from './interceptor/token.interceptor';
     CollectionDetailsComponent,
     FooterComponent,
     LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,6 +55,8 @@ import { TokenInterceptorProvider } from './interceptor/token.interceptor';
     ShareButtonsModule,
     ShareIconsModule,
     FormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
   ],
   providers: [TokenInterceptorProvider],
   bootstrap: [AppComponent]

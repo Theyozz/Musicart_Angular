@@ -2,6 +2,8 @@
 
 .first-section{
     margin-bottom: 250px;
+    padding: 50px 20px;
+    border-radius: 10px;
 }
 .nft{
     background-color: #121619;
@@ -10,6 +12,9 @@
     border-top-right-radius: 10px;
 }
 .card-img-top{
+    width: auto;
+    height: 400px;
+    object-fit: cover;
     border-radius: 10px;
 }
 
@@ -42,13 +47,45 @@
     height: 160px;
 }
 .name{
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     border-radius: 5px;
     border-bottom-right-radius: 25px;
     padding: 5px 10px;
     margin-top: -30px;
     position: relative;
     z-index: 1;
+}
+.pp-ceo{
+    background-image: url(../../assets/team-pic/ceo.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+}
+.pp-cm{
+    background-image: url(../../assets/team-pic/community-manager.jpeg);
+    background-position: center;
+    background-size: cover;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+}
+.pp-design{
+    background-image: url(../../assets/team-pic/design.jpeg);
+    background-position: center;
+    background-size: cover;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+}
+.pp-dev{
+    background-image: url(../../assets/team-pic/developer.jpeg);
+    background-position: center;
+    background-size: cover;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
 }
 
 /* TROISIÈME SECTION */

@@ -28,4 +28,7 @@ export class NftService {
   getNft(id: number): Observable<INft> {
     return this.http.get<INft>(`${this.baseUrl}/${id}`);
   }
+  searchNfts(name: string): Observable<any>{
+    return this.http.get(`${this.baseUrl}/search?q=${name}`)
+  }
 }

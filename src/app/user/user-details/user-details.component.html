@@ -1,20 +1,61 @@
-<div class="text-white d-flex justify-content-between test " style="background: url({{user.profil_picture}}) no-repeat center center / cover;" *ngIf="user">
-    <div class="d-flex align-items-center gap-4">
-        <img src="{{user.profil_picture}}" width="150px" alt="photo de profil">
-        <h3 class="">{{user.pseudo}}</h3>
+<section class="container text-white">
+    <div *ngIf="isLoggedIn(); else notLoggedInOptions">
+        <div class="text-white d-flex justify-content-between test" *ngIf="user">
+            <div class="d-flex align-items-center gap-4">
+                <img src="{{user.profil_picture}}" width="150px" alt="photo de profil">
+                <div class="">
+                    <h3>{{user.pseudo}}</h3>
+                    <p class="fw-light">{{user.email}}</p>
+                </div>
+            </div>
+            <div>
+                <share-buttons
+                    theme="modern-dark"
+                    [include]="['copy']"
+                    [showIcon]="true"
+                    [showText]="true"
+                    url="http://localhost:4200/users/{{user.id}}"
+                    description="Angular Share Buttons"
+                    twitterAccount="Theyozz">
+                </share-buttons>
+            </div>
+        </div>
     </div>
-    <div>
-        <share-buttons 
-            theme="modern-dark"
-            [include]="['copy']"
-            [showIcon]="true"
-            [showText]="true"
-            url="http://localhost:4200/users/{{user.id}}"
-            description="Angular Share Buttons"
-            twitterAccount="Theyozz">
-        </share-buttons>
+    <hr>
+    <div *ngIf="user">
+        <div class="d-flex justify-content-start flex-wrap gap-4">
+            <div *ngFor="let nft of nftUser">
+                <a [routerLink]="['/nfts',nft.id]">
+                    <div class="card mb-4 nft">
+                        <img [src]="nft.img" class="card-img-top" alt="NFT Image" />
+                        <div class="card-body">
+                          <div>
+                            <div class="d-flex gap-1 align-items-center mb-2">
+                              <p class="m-0 text-white">{{ nft.nFTCollection.name }}</p>
+                              <img
+                                src="../../../assets/completer.png"
+                                width="10px"
+                                height="10px"
+                                alt="badge vérifié"
+                              />
+                            </div>
+                          </div>
+                          <h6 class="card-title text-white">{{ nft.name }}</h6>
+                        </div>
+                      </div>
+                </a>
+            </div>
+        </div>
     </div>
-</div>
-<section class="container">
-    
+    <ng-template #notLoggedInOptions>
+        <div class="connecte d-flex align-items-center justify-content-center">
+            <div>
+                <h1 class="text-white text-center">CONNECTE TOI</h1>
+                <p class="text-center">Vous devez vous connecter pour avoir accès aux utilisateurs</p>
+                <a href="login">
+                    <p class="text-center">Cliquez ici pour vous connecter</p>
+                </a>
+            </div>
+        </div>
+    </ng-template>
 </section>

@@ -20,6 +20,7 @@ export class ListNftComponent implements OnInit {
     this.nft.getAllNfts().subscribe(
       (data) => {
         this.nfts = data['hydra:member'];
+        console.log(this.nfts)
       }
     );
   }
