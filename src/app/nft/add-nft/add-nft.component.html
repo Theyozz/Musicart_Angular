@@ -1,1 +1,19 @@
-<p>add-nft works!</p>
+<form [formGroup]="form" class="form-control" (submit)="submit()">
+    <h1 class="mb-5">Creez votre NFT</h1>
+    <div>
+            <input type="text" class="form-control w-50 mb-2" formControlName="name" placeholder="Nom du NFT" required>
+            <div>
+                <label for="">Image</label>
+                <input type="text" formControlName="img">
+            </div>
+            <input type="text" class="form-control w-50 mb-2" formControlName="description" placeholder="Description" required>
+            <input type="number" class="form-control w-50 mb-2" formControlName="launchPriceEth" placeholder="prix de lancement en euro" required>
+            <input type="number" class="form-control w-50 mb-2" formControlName="launchPriceEur" placeholder="prix de lancement en eth" required>
+            <label for="">Collections</label>
+            <select formControlName="nFTCollection">
+                <option *ngFor="let collection of nFTCollections" [value]="'/api/n_f_t_collections/' + collection['id']">{{ collection.name }}</option>
+            </select>
+
+    </div>
+    <button type="submit" class="form-control my-4" class="btn btn-outline-primary">Valider</button>
+</form>

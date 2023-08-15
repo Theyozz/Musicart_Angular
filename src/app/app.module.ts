@@ -25,7 +25,7 @@ import { LoginComponent } from './login/login.component';
 import {  FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TokenInterceptorProvider } from './interceptor/token.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RegisterComponent } from './register/register.component';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -46,7 +46,6 @@ import { RegisterComponent } from './register/register.component';
     CollectionDetailsComponent,
     FooterComponent,
     LoginComponent,
-    RegisterComponent,
   ],
   imports: [
     BrowserModule,
@@ -57,6 +56,7 @@ import { RegisterComponent } from './register/register.component';
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   providers: [TokenInterceptorProvider],
   bootstrap: [AppComponent]

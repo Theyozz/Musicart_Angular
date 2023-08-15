@@ -5,7 +5,6 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class TokenService {
-  private readonly USER_KEY = 'auth_user';
 
   constructor(private router: Router) { }
 
@@ -22,14 +21,14 @@ export class TokenService {
   clearTokenAndUserInfos(): void{
     localStorage.removeItem('token')
     localStorage.removeItem('auth_user')
-    this.router.navigate(['/'])
+    this.router.navigate(['/login'])
   }
 
   getToken(): string | null{
     return localStorage.getItem('token')
   }
   saveUserCredentials(pseudo: string): void {
-    localStorage.setItem(this.USER_KEY,pseudo);
+    localStorage.setItem('auth_user',pseudo);
   }
 
   getUserCredentials(): string | null{

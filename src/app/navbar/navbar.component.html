@@ -1,38 +1,64 @@
 <nav class="navbar navbar-expand-xl mb-5 px-2 fixed-top">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="home"><img src="../../assets/logo.png" width="70px"></a>
-      <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link text-white" aria-current="page" href="nfts">Explorer</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white" href="collections">Collection</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white" href="/">Ressources</a>
-          </li>
-        </ul>
-        <div class="d-lg-flex col-lg-6 gap-5">
-          <form  class="d-flex col-lg-8" role="search">
-            <input class="form-control me-2" type="search" placeholder="Rechercher..." aria-label="Rechercher">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="home"
+      ><img src="../../assets/logo.png" width="70px"
+    /></a>
+    <button
+      class="navbar-toggler bg-white"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link text-white" aria-current="page" href="nfts"
+            >Explorer</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="collections">Collection</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="/">Ressources</a>
+        </li>
+      </ul>
+      <div class="d-lg-flex gap-4">
+        <div class="d-flex gap-2" *ngIf="isLoggedIn(); else notLoggedInOptions">
+          <form class="d-flex " role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Rechercher..."
+              aria-label="Rechercher"
+            />
           </form>
-            <div *ngIf="isLoggedIn(); else notLoggedInOptions">
-              <button (click)="logout()" class="btn btn-secondary">
-                Se deconnecter
-              </button>
-            </div>
-            <ng-template #notLoggedInOptions>
-              <a href="login">
-                <button class="btn btn-secondary">
-                  Se connecter
-                </button>
-              </a>
-            </ng-template>
+          <a href="nfts/create">
+            <button class="btn btn-danger">Créer un NFT</button>
+          </a>
+          <button (click)="logout()" class="btn btn-secondary">
+            Se deconnecter
+          </button>
         </div>
+        <ng-template #notLoggedInOptions>
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Rechercher..."
+              aria-label="Rechercher"
+            />
+          </form>
+          <a href="login">
+            <button class="btn btn-secondary">Se connecter</button>
+          </a>
+        </ng-template>
       </div>
     </div>
+  </div>
 </nav>

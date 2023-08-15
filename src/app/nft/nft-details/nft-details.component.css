@@ -42,7 +42,7 @@ a{
 }
 .card-img-top{
     width: 300px;
-    height: 300px;
+    height: 250px;
     object-fit: cover;
     border-radius: 10px;
 }

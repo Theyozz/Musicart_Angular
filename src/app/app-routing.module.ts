@@ -10,15 +10,17 @@ import { HomeComponent } from './home/home.component';
 import { NftDetailsComponent } from './nft/nft-details/nft-details.component';
 import { CollectionDetailsComponent } from './collection/collection-details/collection-details.component';
 import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
+import { AddNftComponent } from './nft/add-nft/add-nft.component';
+import { AddUserComponent } from './user/add-user/add-user.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'register', component: RegisterComponent},
   {path: 'home', component: HomeComponent},
+  {path: 'users/create', component: AddUserComponent},
   {path: 'users', component: ListUserComponent},
   {path: 'users/:id', component: UserDetailsComponent},
+  {path: 'nfts/create', component: AddNftComponent},
   {path: 'nfts', component: ListNftComponent},
   {path: 'nfts/:id', component: NftDetailsComponent},
   {path: 'collections', component: ListCollectionComponent},

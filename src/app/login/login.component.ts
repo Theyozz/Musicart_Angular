@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../service/auth.service';
 import { ICredentials } from '../interface/ICredentials.modele';
 import { TokenService } from '../service/token.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,7 @@ export class LoginComponent implements OnInit{
     password: ""
   }
 
-  constructor(private authService: AuthService, private tokenService: TokenService){ }
+  constructor(private authService: AuthService, private tokenService: TokenService, private toast: ToastrService){ }
 
   ngOnInit(): void {}
 
@@ -24,8 +25,11 @@ export class LoginComponent implements OnInit{
       data => {
         this.tokenService.saveToken(data.token)
         this.tokenService.saveUserCredentials(this.form.pseudo);
+        this.toast.success("Connecté")
       },
-      err => console.log(err)
+      err => {
+        this.toast.error("Pseudo ou mot de passe incorrecte")
+        console.log(err)}
     )
   }
 }
