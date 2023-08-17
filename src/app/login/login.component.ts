@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit{
     password: ""
   }
 
-  constructor(private authService: AuthService, private tokenService: TokenService, private toast: ToastrService){ }
+  constructor(private authService: AuthService, private tokenService: TokenService, private toastr: ToastrService){ }
 
   ngOnInit(): void {}
 
@@ -25,11 +25,9 @@ export class LoginComponent implements OnInit{
       data => {
         this.tokenService.saveToken(data.token)
         this.tokenService.saveUserCredentials(this.form.pseudo);
-        this.toast.success("Connecté")
+        this.toastr.success("Bienvenue " + this.form.pseudo)
       },
-      err => {
-        this.toast.error("Pseudo ou mot de passe incorrecte")
-        console.log(err)}
+      () =>  this.toastr.error("Utilisateur introuvable")
     )
   }
 }

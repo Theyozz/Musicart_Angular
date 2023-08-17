@@ -4,7 +4,8 @@
             <input type="text" class="form-control w-50 mb-2" formControlName="name" placeholder="Nom du NFT" required>
             <div>
                 <label for="">Image</label>
-                <input type="text" formControlName="img">
+                <!--<input type="text" formControlName="img">-->
+                <input type="file" (change)="onChangeFile($event)" formControlName="img">
             </div>
             <input type="text" class="form-control w-50 mb-2" formControlName="description" placeholder="Description" required>
             <input type="number" class="form-control w-50 mb-2" formControlName="launchPriceEth" placeholder="prix de lancement en euro" required>

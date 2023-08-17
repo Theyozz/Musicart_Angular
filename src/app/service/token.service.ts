@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TokenService {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {}
 
   saveToken(token: string): void{
     localStorage.setItem('token',token)
@@ -24,9 +25,6 @@ export class TokenService {
     this.router.navigate(['/login'])
   }
 
-  getToken(): string | null{
-    return localStorage.getItem('token')
-  }
   saveUserCredentials(pseudo: string): void {
     localStorage.setItem('auth_user',pseudo);
   }

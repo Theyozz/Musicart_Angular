@@ -11,11 +11,28 @@ import { FormBuilder } from '@angular/forms';
 })
 export class NavbarComponent implements OnInit{
   users: IUser[] = []
+  user!: IUser;
 
   constructor(private tokenService: TokenService, private userService: UserService, private fb: FormBuilder){}
 
   ngOnInit(): void {
-    this.getUserPseudo();
+    this.loadUsersAndFindUserByPseudo()
+  }
+
+  loadUsersAndFindUserByPseudo(): void{
+    this.userService.getAllUsers().subscribe(
+      (users) => {
+        this.users = users['hydra:member'];
+        const pseudo = this.tokenService.getUserPseudo();
+        if (pseudo) {
+          this.user = this.findUserByPseudo(pseudo);
+        }
+      }
+    );
+  }
+
+  findUserByPseudo(pseudo: string): any {
+    return Object.values(this.users).find(user => user.pseudo === pseudo);
   }
 
   isLoggedIn(): boolean {
@@ -24,10 +41,5 @@ export class NavbarComponent implements OnInit{
 
   logout(): void {
     this.tokenService.clearTokenAndUserInfos()
-  }
-
-  getUserPseudo(){
-    console.log(this.tokenService.getUserPseudo())
-    return this.tokenService.getUserPseudo()
   }
 }

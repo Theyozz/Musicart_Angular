@@ -4,7 +4,7 @@ export interface IUser {
     id: number,
     pseudo: string,
     email: string,
-    gender: number,
+    gender: boolean,
     firstname: string,
     lastname: string,
     BirthDate: Date,

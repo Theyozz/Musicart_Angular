@@ -37,7 +37,6 @@ export class NftDetailsComponent implements OnInit{
       (data) => {
         this.nfts = data['hydra:member'];
         this.getThreeNft();
-        console.log(this.nfts)
       }
     );
   }
