@@ -27,25 +27,26 @@
           <a class="nav-link text-white" href="/">Ressources</a>
         </li>
       </ul>
-      <div class="d-lg-flex gap-4">
-        <div class="d-flex gap-2" *ngIf="isLoggedIn(); else notLoggedInOptions">
-          <form class="d-flex " role="search">
-            <input
-              class="form-control me-2"
-              type="search"
-              placeholder="Rechercher..."
-              aria-label="Rechercher"
-            />
-          </form>
-          <a href="nfts/create">
-            <button class="btn btn-danger">Créer un NFT</button>
-          </a>
-          <div *ngIf="user">
-            <p>{{user.firstname}}</p>
+      <div class="d-lg-flex">
+        <div class="d-flex align-items-center gap-4" *ngIf="isLoggedIn(); else notLoggedInOptions">
+          <div>
+            <form class="d-flex " role="search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Rechercher..."
+                aria-label="Rechercher"
+              />
+            </form>
           </div>
-          <button (click)="logout()" class="btn btn-secondary">
-            Se deconnecter
-          </button>
+          <div *ngIf="user">
+            <a [routerLink]="['/users', user.id]">
+              <img [src]="user.profil_picture" class="profil_picture" alt="" width="60px">
+            </a>
+          </div>
+          <!--<button (click)="logout()" class="btn btn-secondary">
+              Se deconnecter
+          </button>-->
         </div>
         <ng-template #notLoggedInOptions>
           <form class="d-flex" role="search">
