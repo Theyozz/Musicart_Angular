@@ -1,20 +1,23 @@
-<form [formGroup]="form" class="form-control" (submit)="submit()">
-    <h1 class="mb-5">Creez votre NFT</h1>
-    <div>
-            <input type="text" class="form-control w-50 mb-2" formControlName="name" placeholder="Nom du NFT" required>
-            <div>
-                <label for="">Image</label>
-                <!--<input type="text" formControlName="img">-->
+<form [formGroup]="form" class="form-control w-50 mx-auto p-5" (submit)="submit()">
+    <h1 class="mb-5 text-center">Creez votre NFT</h1>
+    <div class="mb-5">
+            <label for="">Image</label>
+            <div class="mb-3">
+                <input type="text" formControlName="img">
                 <input type="file" (change)="onChangeFile($event)" formControlName="img">
             </div>
-            <input type="text" class="form-control w-50 mb-2" formControlName="description" placeholder="Description" required>
-            <input type="number" class="form-control w-50 mb-2" formControlName="launchPriceEth" placeholder="prix de lancement en euro" required>
-            <input type="number" class="form-control w-50 mb-2" formControlName="launchPriceEur" placeholder="prix de lancement en eth" required>
-            <label for="">Collections</label>
-            <select formControlName="nFTCollection">
+            <label>Nom Du NFT</label>
+            <input type="text" class="form-control  mb-2" formControlName="name" placeholder="Mon NFT..." required>
+            <label>Description</label>
+            <textarea class="form-control" formControlName="description" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <label>Prix de lancement en Eth</label>
+            <input type="number" class="form-control  mb-2" formControlName="launchPriceEth" required>
+            <label>Prix de lancement en Euro</label>
+            <input type="number" class="form-control  mb-2" formControlName="launchPriceEur" required>
+            <label>Collection</label> <br>
+            <select class="form-select" formControlName="nFTCollection">
                 <option *ngFor="let collection of nFTCollections" [value]="'/api/n_f_t_collections/' + collection['id']">{{ collection.name }}</option>
             </select>
-
     </div>
-    <button type="submit" class="form-control my-4" class="btn btn-outline-primary">Valider</button>
+    <button type="submit" mat-raised-button color="primary">Créer</button>
 </form>

@@ -4,7 +4,7 @@
         <div class="col-lg-6 mb-5">
             <h1 class="mb-4">Soutenez vos artistes préférés en achetant leur NFT</h1>
             <p class="mb-5">Musicart est une marketplace pour NFTs et crypto collectibles lié à l'univers musical. Achetez, collectionnez, revendez les NFTs de vos artistes préférés</p>
-            <a [routerLink]="['/nfts']"><button class="btn btn-outline-light col-4">Explorer</button></a>
+            <a [routerLink]="['/nfts']"><button mat-stroked-button class="explorer">Explorer</button></a>
         </div>
         <div class="col-lg-4" *ngIf="randomNft">
             <a [routerLink]="['/nfts', randomNft.id]">
@@ -91,3 +91,18 @@
             <img src="../../assets/home-logo/mona-lisa.png" width="80px" alt="">
         </div>
 </section>
+<section class="container text-white five-section">
+    <div>
+        <h2 class="text-uppercase text-center mb-5">Prix de l'ethereum par rapport à l'euro</h2>
+        <div style="width: 80%;" class="mx-auto">
+          <canvas baseChart
+            [datasets]="lineChartData"
+            [labels]="lineChartLabels"
+            [options]="lineChartOptions"
+            [legend]="lineChartLegend"
+            [type]="'line'">
+          </canvas>
+        </div>
+    </div>
+</section>
+

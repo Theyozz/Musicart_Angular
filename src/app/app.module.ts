@@ -22,10 +22,16 @@ import { FooterComponent } from './footer/footer.component';
 import { ShareButtonsModule } from 'ngx-sharebuttons/buttons';
 import { ShareIconsModule } from 'ngx-sharebuttons/icons';
 import { LoginComponent } from './login/login.component';
-import {  FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TokenInterceptorProvider } from './interceptor/token.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatFormFieldModule } from '@angular/material/form-field'; // Import du module MatFormFieldModule
+import { MatSelectModule } from '@angular/material/select'; // Import du module MatSelectModule
+import { MatOptionModule } from '@angular/material/core'; 
+import { NgChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -58,7 +64,13 @@ import { ToastrModule } from 'ngx-toastr';
     BrowserAnimationsModule,
     ToastrModule.forRoot({
       positionClass: 'toast-bottom-right',
-    })
+    }),
+    MatButtonModule,
+    MatIconModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatOptionModule,
+    NgChartsModule
   ],
   providers: [TokenInterceptorProvider],
   bootstrap: [AppComponent]

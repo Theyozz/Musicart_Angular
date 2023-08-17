@@ -1,23 +1,30 @@
 <section class="container text-white">
     <div *ngIf="isLoggedIn(); else notLoggedInOptions">
         <div class="text-white d-flex justify-content-between test" *ngIf="user">
-            <div class="d-flex align-items-center gap-4">
+            <div class="d-flex align-items-center gap-4" >
                 <img src="{{user.profil_picture}}" width="150px" alt="photo de profil">
                 <div class="">
                     <h3>{{user.pseudo}}</h3>
                     <p class="fw-light">{{user.email}}</p>
                 </div>
             </div>
-            <div>
-                <share-buttons
-                    theme="modern-dark"
-                    [include]="['copy']"
-                    [showIcon]="true"
-                    [showText]="true"
-                    url="http://localhost:4200/users/{{user.id}}"
-                    description="Angular Share Buttons"
-                    twitterAccount="Theyozz">
-                </share-buttons>
+            <div class="d-flex align-items-center gap-3">
+                <div *ngIf="user.pseudo === userConnected">
+                    <a href="/nfts/create">
+                        <button mat-raised-button color="warn">Créer un NFT</button>
+                    </a>
+                </div>
+                <div>
+                    <share-buttons
+                        theme="modern-dark"
+                        [include]="['copy']"
+                        [showIcon]="true"
+                        [showText]="true"
+                        url="http://localhost:4200/users/{{user.id}}"
+                        description="Angular Share Buttons"
+                        twitterAccount="Theyozz">
+                    </share-buttons>
+                </div>
             </div>
         </div>
     </div>

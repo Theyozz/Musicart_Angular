@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { TokenService } from '../service/token.service';
 import { IUser } from '../interface/IUser.modele';
 import { UserService } from '../service/user.service';
-import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-navbar',
@@ -13,7 +12,7 @@ export class NavbarComponent implements OnInit{
   users: IUser[] = []
   user!: IUser;
 
-  constructor(private tokenService: TokenService, private userService: UserService, private fb: FormBuilder){}
+  constructor(private tokenService: TokenService, private userService: UserService){}
 
   ngOnInit(): void {
     this.loadUsersAndFindUserByPseudo()
@@ -26,7 +25,6 @@ export class NavbarComponent implements OnInit{
         const pseudo = this.tokenService.getUserPseudo();
         if (pseudo) {
           this.user = this.findUserByPseudo(pseudo);
-          console.log(this.user)
         }
       }
     );

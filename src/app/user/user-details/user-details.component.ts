@@ -16,8 +16,13 @@ export class UserDetailsComponent implements OnInit{
   nfts: INft[] = []
   nft: INft | undefined;
   nftUser: INft[] = []
+  userConnected: any
 
-  constructor(private route: ActivatedRoute,private userService: UserService, private tokenService: TokenService, private nftService: NftService){}
+  constructor(
+    private route: ActivatedRoute,
+    private userService: UserService, 
+    private tokenService: TokenService, 
+    private nftService: NftService){}
 
   async ngOnInit() {
     const idParam = this.route.snapshot.paramMap.get('id');
@@ -38,6 +43,7 @@ export class UserDetailsComponent implements OnInit{
     
       this.getNftUser();
     }
+    this.getUserConnected()
   }
 
   getUserDetails() {
@@ -69,5 +75,10 @@ export class UserDetailsComponent implements OnInit{
     if (userId) {
       this.nftUser = this.nfts.filter((nft) => nft.user.id === userId);
     }
+  }
+
+  getUserConnected(){
+    const user = this.tokenService.getUserPseudo()
+    this.userConnected = user
   }
 }
