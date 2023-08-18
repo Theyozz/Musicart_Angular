@@ -11,11 +11,24 @@ import { EthereumService } from '../service/ethereum.service';
 export class HomeComponent implements OnInit{
   nfts: INft[] = []
   randomNft: INft | undefined
+  ethActualPrice: any
   ethereumPrice: any;
   lineChartData: any = [];
   lineChartLabels: any = [];
   lineChartOptions: any = {
-    responsive: true
+    responsive: true,
+    scales: {
+      y: {
+        ticks: {
+          color: 'white' 
+        }
+      },
+      x: {
+        ticks: {
+          color: 'white' 
+        }
+      }
+    }
   };
   lineChartLegend = true;
   lineChartType = 'line';
@@ -50,6 +63,7 @@ export class HomeComponent implements OnInit{
       }
     }
 
+    this.ethActualPrice = dailyPrices[0][1]
     return dailyPrices;
   }
 

@@ -27,38 +27,30 @@
           <a class="nav-link text-white" href="/">Ressources</a>
         </li>
       </ul>
+      <form class="d-flex " role="search">
+        <input
+          class="form-control me-2"
+          type="search"
+          placeholder="Rechercher..."
+          aria-label="Rechercher"
+        />
+      </form>
       <div class="d-lg-flex">
         <div class="d-flex align-items-center gap-4" *ngIf="isLoggedIn(); else notLoggedInOptions">
           <div>
-            <form class="d-flex " role="search">
-              <input
-                class="form-control me-2"
-                type="search"
-                placeholder="Rechercher..."
-                aria-label="Rechercher"
-              />
-            </form>
           </div>
           <div *ngIf="user">
             <a [routerLink]="['/users', user.id]">
               <img [src]="user.profil_picture" class="profil_picture" alt="" width="60px">
             </a>
           </div>
-          <!--<button (click)="logout()" class="btn btn-secondary">
+          <button (click)="logout()" mat-raised-button color="primary">
               Se deconnecter
-          </button>-->
+          </button>
         </div>
         <ng-template #notLoggedInOptions>
-          <form class="d-flex" role="search">
-            <input
-              class="form-control me-2"
-              type="search"
-              placeholder="Rechercher..."
-              aria-label="Rechercher"
-            />
-          </form>
           <a href="login">
-            <button class="btn btn-secondary">Se connecter</button>
+            <button mat-raised-button color="primary">Se connecter</button>
           </a>
         </ng-template>
       </div>
