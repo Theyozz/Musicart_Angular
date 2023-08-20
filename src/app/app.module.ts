@@ -31,7 +31,7 @@ import { MatFormFieldModule } from '@angular/material/form-field'; // Import du 
 import { MatSelectModule } from '@angular/material/select'; // Import du module MatSelectModule
 import { MatOptionModule } from '@angular/material/core'; 
 import { NgChartsModule } from 'ng2-charts';
-import { TemplateComponent } from './template/template.component';
+
 
 @NgModule({
   declarations: [
@@ -44,7 +44,6 @@ import { TemplateComponent } from './template/template.component';
     ListCategoryComponent,
     AddCollectionComponent,
     ListCollectionComponent,
-    TemplateComponent,
     UserDetailsComponent,
     NavbarComponent,
     HomeComponent,

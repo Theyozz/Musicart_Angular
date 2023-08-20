@@ -13,7 +13,9 @@ export class TokenService {
 
   saveToken(token: string): void{
     localStorage.setItem('token',token)
-    this.router.navigate(['/'])
+    this.router.navigateByUrl('/').then(() => {
+      window.location.reload();
+    });
   }
 
   setIsLogged(value: boolean) {
