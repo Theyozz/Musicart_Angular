@@ -59,7 +59,7 @@ export class UserDetailsComponent implements OnInit{
   }
 
   isLoggedIn(): boolean{
-    return this.tokenService.isLogged();
+    return this.tokenService.getIsLogged();
   }
 
   displayAllNfts(){

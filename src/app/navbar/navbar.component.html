@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-xl mb-5 px-2 fixed-top">
   <div class="container-fluid">
     <a class="navbar-brand" href="home">
-      <img src="../../assets/logo.png" width="70px"/>
+      <img src="../../assets/logo.png" width="65px"/>
     </a>
     <button
       class="navbar-toggler bg-white"
@@ -16,25 +16,25 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link text-white" aria-current="page" href="nfts">
+          <a class="nav-link" aria-current="page" href="nfts">
             Explorer
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="collections">Collection</a>
+          <a class="nav-link" href="collections">Collection</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="/">Ressources</a>
+          <a class="nav-link" href="/">Ressources</a>
         </li>
       </ul>
-      <form class="d-flex " role="search">
+      <!--<form class="d-flex " role="search">
         <input
           class="form-control me-2"
           type="search"
           placeholder="Rechercher..."
           aria-label="Rechercher"
         />
-      </form>
+      </form>-->
       <div class="d-lg-flex">
         <div class="d-flex align-items-center gap-4" *ngIf="isLoggedIn(); else notLoggedInOptions">
           <div>

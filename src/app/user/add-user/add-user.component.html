@@ -1,4 +1,4 @@
-<form [formGroup]="form" class="form-control" (submit)="submit()">
+<form [formGroup]="form" class="form-control w-75 mx-auto p-4" (submit)="submit()">
     <h1 class="mb-5">Rejoignez l'aventure</h1>
     <div class="d-flex mb-4">
         <div class="col">
@@ -17,8 +17,8 @@
                 Femme
             </label>
         </div>
-            <input type="text" class="form-control w-75 mb-2" formControlName="pseudo" placeholder="pseudo" required>
-            <input type="email" class="form-control w-75 mb-2" formControlName="email" placeholder="email" required>
+            <input type="text" class="form-control w-75 mb-2" formControlName="pseudo" placeholder="Pseudo" required>
+            <input type="email" class="form-control w-75 mb-2" formControlName="email" placeholder="Email" required>
             <input type="password" class="form-control w-75 mb-2" formControlName="password" placeholder="Mot de passe" required>
             <input type="date" class="form-control w-75 mb-2" name="" formControlName="BirthDate" id="" required>
         </div>

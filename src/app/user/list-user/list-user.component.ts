@@ -26,7 +26,7 @@ export class ListUserComponent implements OnInit {
   }
 
   isLoggedIn(): boolean{
-    return this.tokenService.isLogged();
+    return this.tokenService.getIsLogged();
   }
 
 }

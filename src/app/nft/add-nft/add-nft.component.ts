@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { INftCollection } from 'src/app/interface/INftCollection.modele';
 import { IUser } from 'src/app/interface/IUser.modele';
@@ -34,7 +35,8 @@ export class AddNftComponent implements OnInit{
     private nftService: NftService,
     private toastr: ToastrService,
     private tokenService: TokenService,
-    private userService: UserService
+    private userService: UserService,
+    private router: Router
   ){}
 
   ngOnInit(): void {
@@ -74,7 +76,10 @@ export class AddNftComponent implements OnInit{
   submit(): void {
     console.log(this.form.getRawValue())
     this.nftService.createNft(this.form).subscribe(
-      () => this.toastr.success("NFT crée"),
+      () => {
+        this.toastr.success("NFT créé");
+        this.router.navigate(['/users/' + this.user.id]);
+      },
       () => this.toastr.error("Impossible de créer le NFT")
     );
   }

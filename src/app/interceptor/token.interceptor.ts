@@ -16,13 +16,11 @@ export class TokenInterceptor implements HttpInterceptor {
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {    
     const token = this.tokenService.getUserCredentials()
-    const userPseudo = this.tokenService.getUserPseudo()
-    if (token && userPseudo !== null) {
+    if (token !== null) {
       let requestClone = request.clone({
         headers: request.headers.set('Authorization', 'bearer '+ token)
-        // .set('Auth-user', userPseudo)
       })
-      console.log(requestClone)
+      this.tokenService.setIsLogged(true);
       return next.handle(requestClone);
     }
 

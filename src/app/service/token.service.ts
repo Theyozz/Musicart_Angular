@@ -7,6 +7,8 @@ import { Router } from '@angular/router';
 
 export class TokenService {
 
+  private isLoggedin = false;
+
   constructor(private router: Router) {}
 
   saveToken(token: string): void{
@@ -14,14 +16,18 @@ export class TokenService {
     this.router.navigate(['/'])
   }
 
-  isLogged(): boolean{
-    const token = localStorage.getItem('token')
-    return !! token
+  setIsLogged(value: boolean) {
+    this.isLoggedin = value;
+  }
+
+  getIsLogged(): boolean {
+    return this.isLoggedin;
   }
 
   clearTokenAndUserInfos(): void{
     localStorage.removeItem('token')
     localStorage.removeItem('auth_user')
+    this.isLoggedin = false
     this.router.navigate(['/login'])
   }
 

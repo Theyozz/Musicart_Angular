@@ -15,7 +15,7 @@ export class NavbarComponent implements OnInit{
   constructor(private tokenService: TokenService, private userService: UserService){}
 
   ngOnInit(): void {
-    this.loadUsersAndFindUserByPseudo()
+    this.loadUsersAndFindUserByPseudo();
   }
 
   loadUsersAndFindUserByPseudo(): void{
@@ -35,7 +35,7 @@ export class NavbarComponent implements OnInit{
   }
 
   isLoggedIn(): boolean {
-    return this.tokenService.isLogged();
+    return this.tokenService.getIsLogged();
   }
 
   logout(): void {

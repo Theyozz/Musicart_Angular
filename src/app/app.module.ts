@@ -11,7 +11,6 @@ import { AddCategoryComponent } from './category/add-category/add-category.compo
 import { ListCategoryComponent } from './category/list-category/list-category.component';
 import { AddCollectionComponent } from './collection/add-collection/add-collection.component';
 import { ListCollectionComponent } from './collection/list-collection/list-collection.component';
-import { TemplateComponent } from './template/template.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { UserDetailsComponent } from './user/user-details/user-details.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -32,6 +31,7 @@ import { MatFormFieldModule } from '@angular/material/form-field'; // Import du 
 import { MatSelectModule } from '@angular/material/select'; // Import du module MatSelectModule
 import { MatOptionModule } from '@angular/material/core'; 
 import { NgChartsModule } from 'ng2-charts';
+import { TemplateComponent } from './template/template.component';
 
 @NgModule({
   declarations: [
