@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Injectable({
   providedIn: 'root'
@@ -9,13 +10,11 @@ export class TokenService {
 
   private isLoggedin = false;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private toastr: ToastrService) {}
 
   saveToken(token: string): void{
     localStorage.setItem('token',token)
-    this.router.navigateByUrl('/').then(() => {
-      window.location.reload();
-    });
+    this.router.navigateByUrl('/')
   }
 
   setIsLogged(value: boolean) {

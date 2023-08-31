@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { INft } from '../interface/INft.module';
 import { NftService } from '../service/nft.service';
 import { EthereumService } from '../service/ethereum.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -10,9 +11,9 @@ import { EthereumService } from '../service/ethereum.service';
 })
 export class HomeComponent implements OnInit{
   nfts: INft[] = []
-  randomNft: INft | undefined
-  ethActualPrice: any
-  ethereumPrice: any;
+  randomNft!: INft 
+  ethPrice!: number
+  ethereumPrice!: Observable<number>;
   lineChartData: any = [];
   lineChartLabels: any = [];
   lineChartOptions: any = {
@@ -37,10 +38,11 @@ export class HomeComponent implements OnInit{
   
   ngOnInit(){
     this.displayAllNfts();
-    this.ethereumPrice = this.ethereumService.getEthereumPrice();
 
+    // Récupération des données du cour de l'ETH
+    this.ethereumPrice = this.ethereumService.getEthereumPrice();
     this.ethereumService.getHistoricalData().subscribe((data: any) => {
-      const filteredData = this.filterDataForDailyPrice(data.prices);
+      let filteredData = this.filterDataForDailyPrice(data.prices);
       this.lineChartData = [{
         data: filteredData.map((entry: any) => entry[1]),
         label: 'Ethereum Price (EUR)'
@@ -49,13 +51,14 @@ export class HomeComponent implements OnInit{
     });
   }
 
+  // Récupération du prix tout les jours à 23h
   filterDataForDailyPrice(prices: any[]): any[] {
-    const dailyPrices = [];
-    const dateMap = new Map();
+    let dailyPrices = [];
+    let dateMap = new Map();
 
-    for (const entry of prices) {
-      const timestamp = new Date(entry[0]);
-      const hour = timestamp.getHours();
+    for (let entry of prices) {
+      let timestamp = new Date(entry[0]);
+      let hour = timestamp.getHours();
 
       if (hour === 23 && !dateMap.has(timestamp.toLocaleDateString())) {
         dateMap.set(timestamp.toLocaleDateString(), true);
@@ -63,7 +66,7 @@ export class HomeComponent implements OnInit{
       }
     }
 
-    this.ethActualPrice = dailyPrices[0][1]
+    this.ethPrice = dailyPrices[0][1]
     return dailyPrices;
   }
 
@@ -77,7 +80,7 @@ export class HomeComponent implements OnInit{
   }
 
   getRandomNft() {
-    const randomIndex = Math.floor(Math.random() * this.nfts.length);
+    let randomIndex = Math.floor(Math.random() * this.nfts.length);
     this.randomNft = this.nfts[randomIndex];
   }
 }
