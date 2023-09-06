@@ -18,6 +18,7 @@ export class AddNftComponent implements OnInit{
   nFTCollections: INftCollection[] = []; 
   users: IUser[] = []
   user!: IUser;
+  currentDate = new Date().toISOString().substr(0, 10);
 
 
   form: FormGroup = this.formBuilder.group({
@@ -27,7 +28,8 @@ export class AddNftComponent implements OnInit{
     launchPriceEth: 0,
     launchPriceEur: 0,
     nFTCollection: '',
-    user: ''
+    user: '',
+    launch_date: [this.currentDate]
   });
 
   constructor(
@@ -40,22 +42,13 @@ export class AddNftComponent implements OnInit{
   ){}
 
   ngOnInit(): void {
+    this.currentDate 
     this.nftService.getAllCollection().subscribe(data => {
       this.nFTCollections = data['hydra:member'];
     });
     this.loadUsersAndFindUserByPseudo()
   }
-
-  onChangeFile(event: any){
-    if (event.target.files.length > 0) {
-       const file = event.target.files[0];
-       const formData = new FormData();
-       formData.append('file', file);
-       this.form.patchValue({ img: `${file.name}` })
-       console.log(file)
-    }
-  }
-
+  
   loadUsersAndFindUserByPseudo(): void{
     this.userService.getAllUsers().subscribe(
       (users) => {
@@ -80,8 +73,12 @@ export class AddNftComponent implements OnInit{
         this.toastr.success("NFT créé");
         this.router.navigate(['/users/' + this.user.id]);
       },
-      () => this.toastr.error("Impossible de créer le NFT")
-    );
+      (err) => {
+        console.log(err)
+        this.toastr.error("Impossible de créer le NFT")
+      }
+      )
+      
   }
 
 }

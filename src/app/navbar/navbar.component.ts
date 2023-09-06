@@ -25,6 +25,7 @@ export class NavbarComponent implements OnInit{
         const pseudo = this.tokenService.getUserPseudo();
         if (pseudo) {
           this.user = this.findUserByPseudo(pseudo);
+          console.log(this.user.roles[0])
         }
       }
     );

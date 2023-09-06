@@ -41,7 +41,14 @@
           </div>
           <div *ngIf="user">
             <a [routerLink]="['/users', user.id]">
-              <img [src]="user.profil_picture" class="profil_picture" alt="" width="60px">
+              <img [src]="user.profil_picture" class="profil_picture" width="60px">
+            </a>
+          </div>
+          <div *ngIf="user.roles[0] == 'ROLE_ADMIN'">
+            <a href="/users">
+              <button mat-raised-button color="accent">
+                admin
+              </button>
             </a>
           </div>
           <button (click)="logout()" mat-raised-button color="primary">

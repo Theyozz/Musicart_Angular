@@ -35,4 +35,7 @@ export class NftService {
   createNft(formData: FormGroup): Observable<any>{
     return this.http.post(this.baseUrl, formData.getRawValue());
   }
+  deleteNft(id: number): Observable<INft>{
+    return this.http.delete<INft>(`${this.baseUrl}/${id}`)
+  }
 }

@@ -3,6 +3,7 @@ import { IAddress } from "./IAddress.modele";
 export interface IUser {
     id: number,
     pseudo: string,
+    roles: string[]
     email: string,
     gender: boolean,
     firstname: string,

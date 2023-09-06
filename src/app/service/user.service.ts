@@ -28,8 +28,10 @@ export class UserService {
     const params = new HttpParams().set('pseudo', pseudo);
     return this.http.get<any[]>(this.baseUrl, { params })
   }
-
   createuser(formData: FormGroup): Observable<any>{
     return this.http.post(this.baseUrl, formData.getRawValue());
+  }
+  deleteUser(id: number): Observable<IUser>{
+    return this.http.delete<IUser>(`${this.baseUrl}/${id}`)
   }
 }
