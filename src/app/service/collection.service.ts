@@ -8,7 +8,7 @@ import { INftCollection } from '../interface/INftCollection.modele';
 })
 export class CollectionService {
 
-  private baseUrl = 'http://127.0.0.1:8000/api/n_f_t_collections';
+  private baseUrl = 'https://127.0.0.1:8000/api/n_f_t_collections';
 
   constructor(private http: HttpClient) { }
 

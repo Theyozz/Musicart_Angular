@@ -9,7 +9,7 @@ import { FormGroup } from '@angular/forms';
   providedIn: 'root'
 })
 export class UserService {
-  private baseUrl = 'http://127.0.0.1:8000/api/users';
+  private baseUrl = 'https://127.0.0.1:8000/api/users';
 
   constructor(private http: HttpClient) { }
 

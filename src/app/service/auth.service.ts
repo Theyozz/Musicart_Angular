@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class AuthService {
 
-  url = 'http://localhost:8000/authentication_token'
+  url = 'https://localhost:8000/authentication_token'
 
   constructor(private http: HttpClient) {}
 

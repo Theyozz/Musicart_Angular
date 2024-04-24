@@ -10,7 +10,7 @@ import { FormGroup } from '@angular/forms';
   providedIn: 'root'
 })
 export class NftService {
-  private baseUrl = 'http://127.0.0.1:8000/api/n_f_ts';
+  private baseUrl = 'https://127.0.0.1:8000/api/n_f_ts';
 
   constructor(private http: HttpClient) { }
 
@@ -18,7 +18,7 @@ export class NftService {
     return this.http.get<any>(this.baseUrl)
   }
   getAllCollection():Observable<any> {
-    return this.http.get<any>('http://127.0.0.1:8000/api/n_f_t_collections')
+    return this.http.get<any>('https://127.0.0.1:8000/api/n_f_t_collections')
   }
 
   getCollection(url: string): Observable<INftCollection> {
