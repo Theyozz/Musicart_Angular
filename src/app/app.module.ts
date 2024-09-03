@@ -31,6 +31,8 @@ import { MatFormFieldModule } from '@angular/material/form-field'; // Import du 
 import { MatSelectModule } from '@angular/material/select'; // Import du module MatSelectModule
 import { MatOptionModule } from '@angular/material/core'; 
 import { NgChartsModule } from 'ng2-charts';
+import { ConfidentialityComponent } from './confidentiality/confidentiality.component';
+import { CookieBannerComponent } from './cookie-banner/cookie-banner.component';
 
 
 @NgModule({
@@ -51,6 +53,8 @@ import { NgChartsModule } from 'ng2-charts';
     CollectionDetailsComponent,
     FooterComponent,
     LoginComponent,
+    ConfidentialityComponent,
+    CookieBannerComponent,
   ],
   imports: [
     BrowserModule,

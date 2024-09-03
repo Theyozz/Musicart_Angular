@@ -44,7 +44,6 @@ export class AddUserComponent implements OnInit{
       },
       (err) => {
         this.toast.error("Informations non valides");
-        console.log("error",err);
       }
     )
   }

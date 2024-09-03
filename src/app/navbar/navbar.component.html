@@ -44,7 +44,7 @@
               <img [src]="user.profil_picture" class="profil_picture" width="60px">
             </a>
           </div>
-          <div *ngIf="user.roles[0] == 'ROLE_ADMIN'">
+          <div *ngIf="user && user.roles[0] == 'ROLE_ADMIN'">
             <a href="/users">
               <button mat-raised-button color="accent">
                 admin
