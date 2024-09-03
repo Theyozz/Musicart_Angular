@@ -12,20 +12,22 @@ import { CollectionDetailsComponent } from './collection/collection-details/coll
 import { LoginComponent } from './login/login.component';
 import { AddNftComponent } from './nft/add-nft/add-nft.component';
 import { AddUserComponent } from './user/add-user/add-user.component';
+import { ConfidentialityComponent } from './confidentiality/confidentiality.component';
 
 const routes: Routes = [
-  {path: '', component: HomeComponent},
-  {path: 'login', component: LoginComponent},
-  {path: 'home', component: HomeComponent},
-  {path: 'users/create', component: AddUserComponent},
-  {path: 'users', component: ListUserComponent},
-  {path: 'users/:id', component: UserDetailsComponent},
-  {path: 'nfts/create', component: AddNftComponent},
-  {path: 'nfts', component: ListNftComponent},
-  {path: 'nfts/:id', component: NftDetailsComponent},
-  {path: 'collections', component: ListCollectionComponent},
-  {path: 'collections/:id', component: CollectionDetailsComponent},
-  {path: 'categories', component: ListCategoryComponent},
+  { path: '', component: HomeComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'users/create', component: AddUserComponent },
+  { path: 'users', component: ListUserComponent },
+  { path: 'users/:id', component: UserDetailsComponent },
+  { path: 'nfts/create', component: AddNftComponent },
+  { path: 'nfts', component: ListNftComponent },
+  { path: 'nfts/:id', component: NftDetailsComponent },
+  { path: 'collections', component: ListCollectionComponent },
+  { path: 'collections/:id', component: CollectionDetailsComponent },
+  { path: 'categories', component: ListCategoryComponent },
+  { path: 'privacy', component: ConfidentialityComponent },
 ]
 
 @NgModule({

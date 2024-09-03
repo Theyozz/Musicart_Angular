@@ -33,7 +33,6 @@ export class ListUserComponent implements OnInit {
     this.nftService.getAllNfts().subscribe(
       (data) => {
         this.nfts = data['hydra:member']
-        console.log(this.nfts)
       }
     )
   }

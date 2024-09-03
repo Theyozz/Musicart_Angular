@@ -1,46 +1,56 @@
-.nft{
+.nft {
     border-radius: 10px;
 }
-.launch_price{
+
+.launch_price {
     font-weight: 200;
     font-size: small;
 }
-.accordion-item{
+
+.accordion-item {
     background-color: #121619;
 }
-.accordion-button{
+
+.accordion-button {
     background-color: #21252B !important;
     color: white;
 }
-.accordion-button:not(.collapsed){
+
+.accordion-button:not(.collapsed) {
     color: white;
 }
-.accordion{
-    --bs-accordion-border-color:#21252B ;
-    --bs-accordion-color:white;
+
+.accordion {
+    --bs-accordion-border-color: #21252B;
+    --bs-accordion-color: white;
 }
-.infos{
+
+.infos {
     border-radius: 10px;
-    background-color: #21252B ;
+    background-color: #21252B;
 }
-a{
+
+a {
     color: white;
 }
-.user:hover{
+
+.user:hover {
     text-decoration: underline red;
 }
-.nft{
+
+.nft {
     background-color: #121619;
     border: rgb(71, 71, 71) 1px solid;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
 
-.nft:hover{
+.nft:hover {
     cursor: pointer;
     background-color: #212527;
 }
-.card-img-top{
+
+.card-img-top {
     width: 300px;
     height: 250px;
     object-fit: cover;

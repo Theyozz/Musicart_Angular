@@ -67,14 +67,12 @@ export class AddNftComponent implements OnInit{
   }
 
   submit(): void {
-    console.log(this.form.getRawValue())
     this.nftService.createNft(this.form).subscribe(
       () => {
         this.toastr.success("NFT créé");
         this.router.navigate(['/users/' + this.user.id]);
       },
       (err) => {
-        console.log(err)
         this.toastr.error("Impossible de créer le NFT")
       }
       )
