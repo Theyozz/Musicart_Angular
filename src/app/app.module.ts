@@ -11,7 +11,7 @@ import { AddCategoryComponent } from './category/add-category/add-category.compo
 import { ListCategoryComponent } from './category/list-category/list-category.component';
 import { AddCollectionComponent } from './collection/add-collection/add-collection.component';
 import { ListCollectionComponent } from './collection/list-collection/list-collection.component';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { UserDetailsComponent } from './user/user-details/user-details.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
@@ -27,9 +27,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { MatFormFieldModule } from '@angular/material/form-field'; // Import du module MatFormFieldModule
-import { MatSelectModule } from '@angular/material/select'; // Import du module MatSelectModule
-import { MatOptionModule } from '@angular/material/core'; 
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { MatOptionModule } from '@angular/material/core';
 import { NgChartsModule } from 'ng2-charts';
 import { ConfidentialityComponent } from './confidentiality/confidentiality.component';
 import { CookieBannerComponent } from './cookie-banner/cookie-banner.component';
