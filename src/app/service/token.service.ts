@@ -10,10 +10,10 @@ export class TokenService {
 
   private isLoggedin = false;
 
-  constructor(private router: Router, private toastr: ToastrService) {}
+  constructor(private router: Router, private toastr: ToastrService) { }
 
-  saveToken(token: string): void{
-    localStorage.setItem('token',token)
+  saveToken(token: string): void {
+    localStorage.setItem('token', token)
     this.router.navigateByUrl('/')
   }
 
@@ -25,21 +25,22 @@ export class TokenService {
     return this.isLoggedin;
   }
 
-  clearTokenAndUserInfos(): void{
+  clearTokenAndUserInfos(): void {
     localStorage.removeItem('token')
     localStorage.removeItem('auth_user')
+    localStorage.removeItem('cookiesAccepted')
     this.isLoggedin = false
     this.router.navigate(['/login'])
   }
 
   saveUserCredentials(pseudo: string): void {
-    localStorage.setItem('auth_user',pseudo);
+    localStorage.setItem('auth_user', pseudo);
   }
 
-  getUserCredentials(): string | null{
+  getUserCredentials(): string | null {
     return localStorage.getItem('token')
   }
-  getUserPseudo(): string | null{
+  getUserPseudo(): string | null {
     return localStorage.getItem('auth_user')
   }
 }

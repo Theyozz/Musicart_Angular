@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { UserService } from 'src/app/service/user.service';
@@ -9,29 +9,29 @@ import { UserService } from 'src/app/service/user.service';
   templateUrl: './add-user.component.html',
   styleUrls: ['./add-user.component.css']
 })
-export class AddUserComponent implements OnInit{
+export class AddUserComponent implements OnInit {
   form: FormGroup = this.formBuilder.group({
-    pseudo: '',
-    password: '',
-    email: '',
-    gender: true,
-    firstname: '',
-    lastname: '',
-    BirthDate: '',
+    firstname: ['', Validators.required],
+    lastname: ['', Validators.required],
+    gender: [null, Validators.required],
+    pseudo: ['', Validators.required],
+    email: ['', [Validators.required, Validators.email]],
+    password: ['', Validators.required],
+    BirthDate: ['', Validators.required],
     Address: this.formBuilder.group({
-      city: '',
-      ZIPCode: '',
-      street: ''
+      city: ['', Validators.required],
+      ZIPCode: ['', Validators.required],
+      street: ['', Validators.required]
     })
-    
+
   });
 
   constructor(
-    private formBuilder: FormBuilder, 
+    private formBuilder: FormBuilder,
     private userService: UserService,
     private toast: ToastrService,
     private router: Router
-  ){}
+  ) { }
 
   ngOnInit(): void {
   }
@@ -43,6 +43,7 @@ export class AddUserComponent implements OnInit{
         this.router.navigate(['/login'])
       },
       (err) => {
+        this.form.markAllAsTouched();
         this.toast.error("Informations non valides");
       }
     )

@@ -9,7 +9,12 @@ export class CookieBannerComponent {
   cookiesAccepted = false;
 
   ngOnInit(): void {
-    this.cookiesAccepted = localStorage.getItem('cookiesAccepted') === 'true';
+    const storedValue = localStorage.getItem('cookiesAccepted');
+    if (storedValue === null) {
+      this.cookiesAccepted = false;
+    } else {
+      this.cookiesAccepted = storedValue === 'true';
+    }
   }
 
   acceptCookies(): void {
@@ -21,5 +26,4 @@ export class CookieBannerComponent {
     localStorage.setItem('cookiesAccepted', 'false');
     this.cookiesAccepted = true;
   }
-
 }
