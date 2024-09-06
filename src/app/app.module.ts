@@ -33,6 +33,8 @@ import { MatOptionModule } from '@angular/material/core';
 import { NgChartsModule } from 'ng2-charts';
 import { ConfidentialityComponent } from './confidentiality/confidentiality.component';
 import { CookieBannerComponent } from './cookie-banner/cookie-banner.component';
+import { CguComponent } from './cgu/cgu.component';
+import { LegaleMentionsComponent } from './legale-mentions/legale-mentions.component';
 
 
 @NgModule({
@@ -55,6 +57,8 @@ import { CookieBannerComponent } from './cookie-banner/cookie-banner.component';
     LoginComponent,
     ConfidentialityComponent,
     CookieBannerComponent,
+    CguComponent,
+    LegaleMentionsComponent,
   ],
   imports: [
     BrowserModule,

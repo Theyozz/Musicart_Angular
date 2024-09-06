@@ -13,6 +13,8 @@ import { LoginComponent } from './login/login.component';
 import { AddNftComponent } from './nft/add-nft/add-nft.component';
 import { AddUserComponent } from './user/add-user/add-user.component';
 import { ConfidentialityComponent } from './confidentiality/confidentiality.component';
+import { LegaleMentionsComponent } from './legale-mentions/legale-mentions.component';
+import { CguComponent } from './cgu/cgu.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -28,6 +30,8 @@ const routes: Routes = [
   { path: 'collections/:id', component: CollectionDetailsComponent },
   { path: 'categories', component: ListCategoryComponent },
   { path: 'privacy', component: ConfidentialityComponent },
+  { path: 'propos', component: LegaleMentionsComponent },
+  { path: 'cgu', component: CguComponent },
 ]
 
 @NgModule({
