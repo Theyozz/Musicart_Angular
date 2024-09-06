@@ -83,7 +83,7 @@
         <h2 class="text-center mb-5">Plus de cette collection</h2>
         <div class="d-lg-flex justify-content-center gap-5">
           <div *ngFor="let nft of threeNft">
-            <a [routerLink]="['/nfts', nft.id]">
+            <a href="/nfts/{{nft.id}}">
               <div class="card mb-4 mx-auto nft" style="display: inline-block;">
                 <img [src]="nft.img" class="card-img-top" alt="NFT Image">
                 <div class="card-body">
