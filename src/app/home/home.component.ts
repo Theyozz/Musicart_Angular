@@ -9,9 +9,9 @@ import { Observable } from 'rxjs';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit{
+export class HomeComponent implements OnInit {
   nfts: INft[] = []
-  randomNft!: INft 
+  randomNft!: INft
   ethPrice!: number
   ethereumPrice!: Observable<number>;
   lineChartData: any = [];
@@ -21,12 +21,12 @@ export class HomeComponent implements OnInit{
     scales: {
       y: {
         ticks: {
-          color: 'white' 
+          color: 'white'
         }
       },
       x: {
         ticks: {
-          color: 'white' 
+          color: 'white'
         }
       }
     }
@@ -34,9 +34,9 @@ export class HomeComponent implements OnInit{
   lineChartLegend = true;
   lineChartType = 'line';
 
-  constructor(private nft: NftService,private ethereumService: EthereumService){}
-  
-  ngOnInit(){
+  constructor(private nft: NftService, private ethereumService: EthereumService) { }
+
+  ngOnInit() {
     this.displayAllNfts();
 
     // Récupération des données du cour de l'ETH
@@ -70,7 +70,7 @@ export class HomeComponent implements OnInit{
     return dailyPrices;
   }
 
-  displayAllNfts(){
+  displayAllNfts() {
     this.nft.getAllNfts().subscribe(
       (data) => {
         this.nfts = data['hydra:member'];
