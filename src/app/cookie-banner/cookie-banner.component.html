@@ -1,4 +1,4 @@
-<div class="cookie-banner" *ngIf="!cookiesAccepted">
+<div class="cookie-banner" *ngIf="!cookiesAccepted && userLogged">
     <p>Nous utilisons des cookies pour améliorer votre expérience. Acceptez-vous leur utilisation ?</p>
     <button mat-button (click)="acceptCookies()">Accepter</button>
     <button mat-button (click)="declineCookies()">Refuser</button>

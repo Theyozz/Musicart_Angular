@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TokenService } from '../service/token.service';
 
 @Component({
   selector: 'app-cookie-banner',
@@ -6,7 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./cookie-banner.component.css']
 })
 export class CookieBannerComponent {
-  cookiesAccepted = false;
+  cookiesAccepted: boolean = false;
+  userLogged: boolean = this.tokenService.getIsLogged();
+
+  constructor(private tokenService: TokenService) { }
 
   ngOnInit(): void {
     const storedValue = localStorage.getItem('cookiesAccepted');
