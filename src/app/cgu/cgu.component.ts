@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./cgu.component.css']
 })
 export class CguComponent {
+  currentDate: string;
+
+  constructor() {
+    this.currentDate = new Date().toLocaleDateString();
+  }
 
 }

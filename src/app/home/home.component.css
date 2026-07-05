@@ -1,57 +1,63 @@
 /* PREMIERE SECTION */
 
-.first-section{
+.first-section {
     margin-bottom: 250px;
     padding: 50px 20px;
     border-radius: 10px;
 }
-.nft{
+
+.nft {
     background-color: #121619;
     border: rgb(71, 71, 71) 1px solid;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
-.card-img-top{
+
+.card-img-top {
     width: auto;
     height: 400px;
     object-fit: cover;
     border-radius: 10px;
 }
 
-.nft:hover{
+.nft:hover {
     cursor: pointer;
     background-color: #212527;
 }
 
-.explorer{
+.explorer {
     width: 300px;
     height: 50px;
 }
 
 /* DEUXIEME SECTION */
 
-.second-section{
+.second-section {
     margin-bottom: 250px;
 }
-.infos{
+
+.infos {
     background-color: rgba(255, 255, 255, 0.08);
     padding: 35px;
     border-radius: 5px;
     border: rgba(255, 255, 255, 0.395) 1px solid;
     margin-left: -200px;
 }
-.infos-res{
+
+.infos-res {
     background-color: rgba(255, 255, 255, 0.08);
     padding: 35px;
     border-radius: 5px;
     border: rgba(255, 255, 255, 0.395) 1px solid;
 }
-.team-pic{
+
+.team-pic {
     border-radius: 100%;
     width: 180px;
     height: 160px;
 }
-.name{
+
+.name {
     background-color: rgb(255, 255, 255);
     border-radius: 5px;
     border-bottom-right-radius: 25px;
@@ -60,7 +66,8 @@
     position: relative;
     z-index: 1;
 }
-.pp-ceo{
+
+.pp-ceo {
     background-image: url(../../assets/team-pic/ceo.jpg);
     background-position: center;
     background-size: cover;
@@ -68,7 +75,8 @@
     height: 180px;
     border-radius: 50%;
 }
-.pp-cm{
+
+.pp-cm {
     background-image: url(../../assets/team-pic/community-manager.jpeg);
     background-position: center;
     background-size: cover;
@@ -76,7 +84,8 @@
     height: 180px;
     border-radius: 50%;
 }
-.pp-design{
+
+.pp-design {
     background-image: url(../../assets/team-pic/design.jpeg);
     background-position: center;
     background-size: cover;
@@ -84,7 +93,8 @@
     height: 180px;
     border-radius: 50%;
 }
-.pp-dev{
+
+.pp-dev {
     background-image: url(../../assets/team-pic/developer.jpeg);
     background-position: center;
     background-size: cover;
@@ -95,37 +105,40 @@
 
 /* TROISIÈME SECTION */
 
-.third-section{
+.third-section {
     margin-bottom: 250px;
 }
 
 /* QUATRIÈME SECTION */
 
-.fourth-section{
+.fourth-section {
     margin-bottom: 250px;
 }
 
-.info-nft-left p{
+.info-nft-left p {
     background-color: rgba(255, 255, 255, 0.08);
     padding: 30px;
     border: 1px solid rgba(255, 255, 255, 0.413);
     border-radius: 5px;
 }
-.info-nft-left img{
+
+.info-nft-left img {
     margin-left: -20px;
 }
-.info-nft-right p{
+
+.info-nft-right p {
     background-color: rgba(255, 255, 255, 0.08);
     padding: 30px;
     border: 1px solid rgba(255, 255, 255, 0.413);
     border-radius: 5px;
 }
-.info-nft-right img{
+
+.info-nft-right img {
     margin-right: -20px;
 }
 
 /* CINQUIÈME SECTION */
 
-.five-section{
+.five-section {
     margin-bottom: 250px;
 }
